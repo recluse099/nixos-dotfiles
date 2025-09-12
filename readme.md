@@ -1,2 +1,2 @@
-Description: NixOS + Niri(Wayland) \n
+Description: NixOS + Niri(Wayland)  
 These are my dotfiles without my niri configuration, planning to nixify it soon, stay tuned...
