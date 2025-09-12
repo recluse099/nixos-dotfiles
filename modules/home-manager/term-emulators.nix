@@ -2,9 +2,11 @@
   programs = {
     ghostty = {
       enable = true;
+      enableZshIntegration = true;
+      enableBashIntegration = true;
       settings = {
-        font-family = "JetBrainsMono Nerd Font Mono";
-        font-size = 20;
+        font-family = "JetBrainsMono Nerd Font";
+        font-size = 18;
         freetype-load-flags = ["hinting"];
         background-opacity = 0.8;
         window-decoration = "auto";

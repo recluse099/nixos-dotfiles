@@ -1,7 +1,8 @@
+{lib, ...}:
 let 
-  importDir = import ../importDir.nix;
+  helpers = (import ../helpers.nix) { inherit lib; };
 in 
   {
-    imports = importDir ./.;
+    imports = helpers.importDirAll ./.;
   }
 

@@ -32,7 +32,6 @@
     TERMINAL = lib.getExe pkgs.ghostty;
     LAUNCHER = /home/recluse/.nix-profile/bin/fuzzel;
     SHELL = /home/recluse/.nix-profile/bin/nu;
-    FLAKE = "/home/recluse/source/nix/"; # path to flake
   };
 
   # Let Home Manager install and manage itself.
