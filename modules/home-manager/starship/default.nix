@@ -4,6 +4,6 @@
     enableNushellIntegration = true;
     enableZshIntegration = true;
     enableBashIntegration = true;
-    settings = builtins.fromTOML (builtins.readFile ./starship-pastel.toml);
+    settings = builtins.fromTOML (builtins.readFile ./starship.toml);
   };
 }

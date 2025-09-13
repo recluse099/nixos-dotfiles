@@ -36,14 +36,14 @@ format = """
 [](surface0)\
 $os\
 $username\
-[](bg:lavender fg:surface0)\
+[](bg:lavender fg:surface0)\
 $shell\
-[](fg:lavender bg:peach)\
+[](fg:lavender bg:peach)\
 $directory\
-[](fg:peach bg:green)\
+[](fg:peach bg:green)\
 $git_branch\
 $git_status\
-[](fg:green bg:teal)\
+[](fg:green bg:teal)\
 $c\
 $rust\
 $golang\
@@ -53,11 +53,11 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:teal bg:blue)\
+[](fg:teal bg:blue)\
 $docker_context\
-[](fg:blue bg:mauve)\
+[](fg:blue bg:mauve)\
 $time\
-[](fg:mauve bg:none)\
+[ ](fg:mauve)\
 $line_break$character
 """
 
@@ -199,7 +199,7 @@ format = '[ $symbol( $version) ]($style)'
 disabled = false
 time_format = "%R"
 style = "fg:mantle bg:mauve"
-format = '[  $time ]($style)'
+format = '[ $time ]($style)'
 
 [shell]
 disabled = false
@@ -208,6 +208,11 @@ fish_indicator = 'fish'
 style = "bg:lavender fg:mantle"
 format = '[ $indicator ]($style)'
 
+
+[fill]
+symbol = '-'
+style = 'green'
+
 [line_break]
 disabled = false
 
@@ -215,8 +220,8 @@ disabled = false
 disabled = false
 success_symbol = '[λ](bold fg:sapphire)'
 error_symbol = '[⊥](bold fg:red)'
-vimcmd_symbol = '[](bold fg:green)'
-vimcmd_replace_one_symbol = '[](bold fg:mauve)'
-vimcmd_replace_symbol = '[](bold fg:mauve)'
-vimcmd_visual_symbol = '[](bold fg:lavender)'
+vimcmd_symbol = '[V](bold fg:green)'
+# vimcmd_replace_one_symbol = '[](bold fg:mauve)'
+# vimcmd_replace_symbol = '[](bold fg:mauve)'
+# vimcmd_visual_symbol = '[](bold fg:lavender)'
 

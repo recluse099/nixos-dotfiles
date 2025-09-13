@@ -34,13 +34,41 @@
       # typst_pdf_viewer = "zathura";
     };
     enableLuaLoader = true;
-    statusline.lualine.enable = true;
+    statusline.lualine = {
+      enable = true;
+      activeSection.b = [
+        ''
+          {
+            "filetype",
+            colored = true,
+            icon_only = true,
+            icon = { align = 'left' }
+          }
+        ''
+        ''
+          {
+            "filename",
+            path = 4,
+            symbols = {modified = ' ', readonly = ' '},
+            separator = {right = ''}
+          }
+        ''
+        ''
+          {
+            "",
+            draw_empty = true,
+            separator = { left = '', right = '' }
+          }
+        ''
+      ];
+    };
     telescope.enable = true;
     autocomplete.blink-cmp.enable = true;
     treesitter= {
       indent.enable = false;
       addDefaultGrammars = true;                  
     };
+      
     diagnostics = {
       enable = true;
       config = {
