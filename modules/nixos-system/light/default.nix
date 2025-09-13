@@ -1,6 +1,6 @@
 {
   programs.light = {
     enable = true;
-    brightnessKeys.enabe = true;
+    brightnessKeys.enable = true;
   };
 }
