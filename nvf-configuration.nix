@@ -1,5 +1,4 @@
 {pkgs, ...}:
-
 {
   vim = {
     theme = {
@@ -65,7 +64,7 @@
     telescope.enable = true;
     autocomplete.blink-cmp.enable = true;
     treesitter= {
-      indent.enable = false;
+      indent.enable = true;
       addDefaultGrammars = true;                  
     };
       
@@ -83,6 +82,9 @@
         enable = true;
         format.enable = true;
         format.type = "alejandra";
+        lsp.enable = true;
+        lsp.server = "nixd";
+        treesitter.enable = true;
       };                          
       ts.enable = true;
       rust.enable = true;
@@ -99,13 +101,19 @@
         wl-copy.enable = true;
         wl-copy.package = pkgs.wl-clipboard-rs;
       };
+      registers = "unnamedplus";
     };
     options = {
-      autoindent = true;
+      autoindent = false;
       shiftwidth = 2;
       tabstop = 2;
       expandtab = true;
     };
+
+    visuals = {
+      nvim-scrollbar.enable = true;
+    };
+
     filetree.nvimTree.setupOpts.view.number = true;
     # Plugins
     extraPlugins = {

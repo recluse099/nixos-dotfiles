@@ -197,9 +197,9 @@
         layer = "top";
         position = "bottom";
 
-        modules-left = ["niri/workspaces" "niri/window"];
-        modules-center = [ "custom/distro" ];
-        modules-right = ["network" "tray" "battery" "backlight" "pulseaudio" "bluetooth" "clock" ];
+        modules-left = ["niri/workspaces" "niri/window" "wlr/taskbar"];
+        modules-center = [ ];
+        modules-right = [ "custom/distro" "network" "tray" "battery" "backlight" "pulseaudio" "bluetooth" "clock" ];
 
       /* Modules configuration */
 
@@ -304,6 +304,12 @@
           on-click-release = "sleep 0";
         };
 
+        "wlr/taskbar" = {
+          all-outputs = false;
+          icon = true;
+          tooltip-format = "{title} | {app_id}";
+          on-click = "activate";  
+        };
       };
     };
   };

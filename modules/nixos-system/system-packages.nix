@@ -11,7 +11,6 @@
     discord
     deluge
     vlc
-    (self.packages.${pkgs.system}.default)
     xwayland-satellite
     pamixer
     pavucontrol
