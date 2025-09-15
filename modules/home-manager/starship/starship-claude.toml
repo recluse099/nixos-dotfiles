@@ -173,7 +173,7 @@ format = '[\[󰥔 $time\]]($style)'
 [cmd_duration]
 disabled = false
 show_milliseconds = true
-min_time = 500
+min_time = 100
 style = "fg:pink"
 format = '[\[took $duration\]]($style)'
 
