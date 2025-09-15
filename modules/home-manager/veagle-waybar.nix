@@ -32,7 +32,7 @@
         }
 
         #tray {
-          background-color: #fab387;
+          background-color: #1e1e2e;
           padding: 0 10px;
           margin: 1px 1px 1px 1px;
           border: 1px solid rgba(0, 0, 0, 0);

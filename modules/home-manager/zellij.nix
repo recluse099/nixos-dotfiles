@@ -7,7 +7,7 @@
       theme = "catppuccin-macchiato";
       show_startup_gips = false;
       show_startup_tips = false;
-      default_layout = "compact";
+      default_layout = "default";
 
     };
   };
