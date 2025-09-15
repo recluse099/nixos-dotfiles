@@ -86,6 +86,8 @@ style_root = "bold fg:red"
 format = '[\[$user\]]($style)(style)'
 
 [shell]
+bash_indicator = 'bash'
+fish_indicator = 'fish'
 format = '[\[$indicator\]]($style)'
 style = "bold fg:lavender"
 disabled = false
