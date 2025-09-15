@@ -116,7 +116,7 @@ CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
-NixOS = ""
+NixOS = " "
 
 [username]
 show_always = true
