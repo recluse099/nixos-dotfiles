@@ -101,7 +101,7 @@
         wl-copy.enable = true;
         wl-copy.package = pkgs.wl-clipboard-rs;
       };
-      registers = "unnamedplus";
+      registers = "unnamed,unnamedplus";
     };
     options = {
       autoindent = false;
@@ -112,6 +112,9 @@
 
     visuals = {
       nvim-scrollbar.enable = true;
+      indent-blankline = {
+        enable = true; 
+      };
     };
 
     filetree.nvimTree.setupOpts.view.number = true;
