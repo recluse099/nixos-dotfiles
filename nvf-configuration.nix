@@ -64,6 +64,8 @@
     telescope.enable = true;
     autocomplete.blink-cmp.enable = true;
     treesitter= {
+      enable = true;
+      highlight.enable = true;
       indent.enable = true;
       addDefaultGrammars = true;                  
     };
@@ -83,7 +85,6 @@
         format.enable = true;
         format.type = "alejandra";
         lsp.enable = true;
-        lsp.server = "nixd";
         treesitter.enable = true;
       };                          
       ts.enable = true;
@@ -93,6 +94,7 @@
         lsp.enable = true;
         lsp.package = pkgs.haskellPackages.haskell-language-server;
         treesitter.enable = true;
+        dap.enable = true;
       };
     };
     clipboard = {
@@ -109,12 +111,16 @@
       tabstop = 2;
       expandtab = true;
     };
-
     visuals = {
       nvim-scrollbar.enable = true;
       indent-blankline = {
         enable = true; 
+        setupOpts = {
+          scope.enabled = true;
+          whitespace.remove_blankline_trail = true; 
+        };
       };
+      rainbow-delimiters.enable = true;
     };
 
     filetree.nvimTree.setupOpts.view.number = true;
@@ -123,8 +129,8 @@
       yuck = {
         package = pkgs.vimPlugins.yuck-vim;
         };
-     stylish-haskell = {
-        package = pkgs.vimPlugins.stylish-haskell;
+     vim-stylish-haskell = {
+        package = pkgs.vimPlugins.vim-stylish-haskell;
       };
      haskell-vim = {
        package = pkgs.vimPlugins.haskell-vim;
