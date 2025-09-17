@@ -1,15 +1,25 @@
-{pkgs, ...}: 
+{pkgs, ...}:
 {
+  home.packages = with pkgs; [
+    gtk3
+    glib
+    girara
+    file 
+    json-glib
+    sqlite-interactive
+  ];
   programs.zathura = {
     enable = true;
     options = {
       selection-clipboard = "clipboard";
       selection-notification = false;
       recolor = true;
+      recolor-keephue = true;
+      recolor-reverse-video = true;
       # --- Core colors ---
       default-fg = "#cdd6f4"; # text
       default-bg = "#11111b"; # crust
-      recolor-keephue = true;
+      
       recolor-lightcolor = "#1e1e2e"; # base
       recolor-darkcolor  = "#cdd6f4"; # text
 
@@ -51,8 +61,13 @@
       highlight-color        = "rgba(203,166,247,0.55)"; # mauve
       highlight-active-color = "rgba(245,194,231,0.65)"; # pink
       highlight-fg           = "rgba(255,255,255,0.9)";  # white
+
+      scroll-step = 50;
+
       # ---Girara options
       guioptions = "v s";
+    };
+    mappings = {
     };
   };  
 }
