@@ -9,7 +9,6 @@
     obsidian
     google-chrome
     discord
-    deluge
     vlc
     xwayland-satellite
     pamixer
