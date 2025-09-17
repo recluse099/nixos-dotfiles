@@ -29,8 +29,8 @@
       haskell_enable_typeroles = 1;        #enable highlighting of type roles
       haskell_enable_static_pointers = 1;  #enable highlighting of `static`
       haskell_backpack = 1;                #enable highlighting of backpack keywords
-      # typst-vim settings
-      # typst_pdf_viewer = "zathura";
+      #typst-vim settings
+      #typst_pdf_viewer = "zathura";
     };
     enableLuaLoader = true;
     statusline.lualine = {
@@ -63,11 +63,13 @@
     };
     telescope.enable = true;
     autocomplete.blink-cmp.enable = true;
+
     treesitter= {
-      enable = true;
+      # enable = false;
       highlight.enable = true;
       indent.enable = true;
-      addDefaultGrammars = true;                  
+      addDefaultGrammars = true; 
+      highlight.disable = [ ];      
     };
       
     diagnostics = {
@@ -92,7 +94,7 @@
       haskell = {
         enable = true;
         lsp.enable = true;
-        lsp.package = pkgs.haskellPackages.haskell-language-server;
+        lsp.package = pkgs.haskell-language-server;
         treesitter.enable = true;
         dap.enable = true;
       };
@@ -129,19 +131,26 @@
       yuck = {
         package = pkgs.vimPlugins.yuck-vim;
         };
-     vim-stylish-haskell = {
-        package = pkgs.vimPlugins.vim-stylish-haskell;
+      vim-stylish-haskell = { # formatter, not syntax highlighter
+       package = pkgs.vimPlugins.vim-stylish-haskell;
       };
-     haskell-vim = {
-       package = pkgs.vimPlugins.haskell-vim;
-     };
+      haskell-vim = {
+        package = pkgs.vimPlugins.haskell-vim;
+      };
     };
+
+    debugger.nvim-dap.enable = true;
+
     lazy.enable = true;
     lazy.plugins = {
       "typst.vim" = {
         package = pkgs.vimPlugins.typst-vim;
         ft = [ "typst" ];
       };
+      #"haskell-scope-highlighting.nvim" = {
+        #package = pkgs.vimPlugins.haskell-scope-highlighting-nvim;
+        #ft = [ "haskell" ];
+        #};
     };
     extraPackages = with pkgs;[ 
       haskellPackages.hlint
