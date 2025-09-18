@@ -1,3 +1,6 @@
 {
-  imports = [ ./yazi.nix ];
+  imports = [ 
+    ./yazi
+    ./thunar
+  ];
 }
