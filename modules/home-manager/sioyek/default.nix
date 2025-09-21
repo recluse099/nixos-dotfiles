@@ -19,6 +19,7 @@
       "ui_selected_text_color" = "0.651 0.678 0.784"; # subtext0
 
       # ---Other---
+      "should_launch_new_window" = "1";
       "show_document_name_in_statusbar" = "1";
       "status_bar_format" = "Page %{current_page} / %{num_pages}%{chapter_name}%{search_results}%{search_progress}%{link_status}%{waiting_for_symbol}%{indexing}%{preview_index}%{synctex}%{drag}%{presentation}%{visual_scroll}%{locked_scroll}%{highlight}%{closest_bookmark}%{close_portal}%{rect_select}%{custom_message}%{document_name}";
       "hover_overview" = "1";
