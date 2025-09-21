@@ -1,5 +1,4 @@
-{pkgs, ...}:
-{
+{pkgs, ...}: {
   vim = {
     theme = {
       enable = true;
@@ -9,10 +8,11 @@
     syntaxHighlighting = true;
     lsp = {
       enable = true;
+      formatOnSave = true;
       lspconfig.enable = true;
       servers = {
         "tinymist" = {
-          filetypes = [ "typ" "typst" ];
+          filetypes = ["typ" "typst"];
           settings = {
             exportPdf = "onType";
             formatterMode = "typestyle";
@@ -22,13 +22,13 @@
       };
     };
     globals = {
-      haskell_enable_quantification = 1;   #enable highlighting of `forall`
-      haskell_enable_recursivedo = 1;      #enable highlighting of `mdo` and `rec`
-      haskell_enable_arrowsyntax = 1;      #enable highlighting of `proc`
+      haskell_enable_quantification = 1; #enable highlighting of `forall`
+      haskell_enable_recursivedo = 1; #enable highlighting of `mdo` and `rec`
+      haskell_enable_arrowsyntax = 1; #enable highlighting of `proc`
       haskell_enable_pattern_synonyms = 1; #enable highlighting of `pattern`
-      haskell_enable_typeroles = 1;        #enable highlighting of type roles
-      haskell_enable_static_pointers = 1;  #enable highlighting of `static`
-      haskell_backpack = 1;                #enable highlighting of backpack keywords
+      haskell_enable_typeroles = 1; #enable highlighting of type roles
+      haskell_enable_static_pointers = 1; #enable highlighting of `static`
+      haskell_backpack = 1; #enable highlighting of backpack keywords
       #typst-vim settings
       #typst_pdf_viewer = "zathura";
     };
@@ -64,14 +64,14 @@
     telescope.enable = true;
     autocomplete.blink-cmp.enable = true;
 
-    treesitter= {
+    treesitter = {
       # enable = false;
       highlight.enable = true;
       indent.enable = true;
-      addDefaultGrammars = true; 
-      highlight.disable = [ ];      
+      addDefaultGrammars = true;
+      highlight.disable = [];
     };
-      
+
     diagnostics = {
       enable = true;
       config = {
@@ -88,7 +88,7 @@
         format.type = "alejandra";
         lsp.enable = true;
         treesitter.enable = true;
-      };                          
+      };
       ts.enable = true;
       rust.enable = true;
       haskell = {
@@ -116,10 +116,10 @@
     visuals = {
       nvim-scrollbar.enable = true;
       indent-blankline = {
-        enable = true; 
+        enable = true;
         setupOpts = {
           scope.enabled = true;
-          whitespace.remove_blankline_trail = true; 
+          whitespace.remove_blankline_trail = true;
         };
       };
       rainbow-delimiters.enable = true;
@@ -130,9 +130,10 @@
     extraPlugins = {
       yuck = {
         package = pkgs.vimPlugins.yuck-vim;
-        };
-      vim-stylish-haskell = { # formatter, not syntax highlighter
-       package = pkgs.vimPlugins.vim-stylish-haskell;
+      };
+      vim-stylish-haskell = {
+        # formatter, not syntax highlighter
+        package = pkgs.vimPlugins.vim-stylish-haskell;
       };
       haskell-vim = {
         package = pkgs.vimPlugins.haskell-vim;
@@ -145,20 +146,20 @@
     lazy.plugins = {
       "typst.vim" = {
         package = pkgs.vimPlugins.typst-vim;
-        ft = [ "typst" ];
+        ft = ["typst"];
       };
       #"haskell-scope-highlighting.nvim" = {
-        #package = pkgs.vimPlugins.haskell-scope-highlighting-nvim;
-        #ft = [ "haskell" ];
-        #};
+      #package = pkgs.vimPlugins.haskell-scope-highlighting-nvim;
+      #ft = [ "haskell" ];
+      #};
     };
-    extraPackages = with pkgs;[ 
+    extraPackages = with pkgs; [
       haskellPackages.hlint
     ];
     luaConfigPost = ''
       vim.keymap.set("n", "<leader>d", function()
         vim.diagnostic.open_float(nil, { focus = false, border = "rounded" })
       end, { desc = "Show diagnostics at cursor" })
-    ''; 
+    '';
   };
 }
