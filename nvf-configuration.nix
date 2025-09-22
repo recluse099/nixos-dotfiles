@@ -87,6 +87,7 @@
         format.enable = true;
         format.type = "alejandra";
         lsp.enable = true;
+        lsp.server = "nixd";
         treesitter.enable = true;
       };
       ts.enable = true;
