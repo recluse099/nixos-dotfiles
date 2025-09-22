@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   vim = {
     theme = {
       enable = true;
@@ -8,11 +9,14 @@
     syntaxHighlighting = true;
     lsp = {
       enable = true;
-      formatOnSave = true;
+      formatOnSave = false;
       lspconfig.enable = true;
       servers = {
         "tinymist" = {
-          filetypes = ["typ" "typst"];
+          filetypes = [
+            "typ"
+            "typst"
+          ];
           settings = {
             exportPdf = "onType";
             formatterMode = "typestyle";
@@ -22,13 +26,13 @@
       };
     };
     globals = {
-      haskell_enable_quantification = 1; #enable highlighting of `forall`
-      haskell_enable_recursivedo = 1; #enable highlighting of `mdo` and `rec`
-      haskell_enable_arrowsyntax = 1; #enable highlighting of `proc`
-      haskell_enable_pattern_synonyms = 1; #enable highlighting of `pattern`
-      haskell_enable_typeroles = 1; #enable highlighting of type roles
-      haskell_enable_static_pointers = 1; #enable highlighting of `static`
-      haskell_backpack = 1; #enable highlighting of backpack keywords
+      haskell_enable_quantification = 1; # enable highlighting of `forall`
+      haskell_enable_recursivedo = 1; # enable highlighting of `mdo` and `rec`
+      haskell_enable_arrowsyntax = 1; # enable highlighting of `proc`
+      haskell_enable_pattern_synonyms = 1; # enable highlighting of `pattern`
+      haskell_enable_typeroles = 1; # enable highlighting of type roles
+      haskell_enable_static_pointers = 1; # enable highlighting of `static`
+      haskell_backpack = 1; # enable highlighting of backpack keywords
       #typst-vim settings
       #typst_pdf_viewer = "zathura";
     };
@@ -69,7 +73,7 @@
       highlight.enable = true;
       indent.enable = true;
       addDefaultGrammars = true;
-      highlight.disable = [];
+      highlight.disable = [ ];
     };
 
     diagnostics = {
@@ -147,7 +151,7 @@
     lazy.plugins = {
       "typst.vim" = {
         package = pkgs.vimPlugins.typst-vim;
-        ft = ["typst"];
+        ft = [ "typst" ];
       };
       #"haskell-scope-highlighting.nvim" = {
       #package = pkgs.vimPlugins.haskell-scope-highlighting-nvim;

@@ -1,10 +1,12 @@
-{pkgs, config, lib, ...}: {
+{pkgs, lib, ...}: {
   programs = {
     ghostty = {
       enable = true;
       enableZshIntegration = true;
       enableBashIntegration = true;
+
       settings = {
+        gtk-single-instance = true;
         font-family = "JetBrainsMono Nerd Font";
         font-size = 18;
         freetype-load-flags = ["hinting"];

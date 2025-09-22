@@ -1,6 +1,9 @@
-{ pkgs, inputs, lib, ... }:
-
 {
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "recluse";
@@ -13,8 +16,6 @@
     ./modules/home-manager
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
@@ -28,7 +29,7 @@
     # '';
   };
 
-  home.sessionVariables = { 
+  home.sessionVariables = {
     TERMINAL = lib.getExe pkgs.ghostty;
     LAUNCHER = /home/recluse/.nix-profile/bin/fuzzel;
     SHELL = /home/recluse/.nix-profile/bin/nu;
@@ -41,4 +42,5 @@
     wlogout.enable = true;
   };
   services.network-manager-applet.enable = true;
+  nixpkgs.config.allowUnfreePredicate = _: true;
 }
