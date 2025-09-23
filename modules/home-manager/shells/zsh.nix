@@ -1,10 +1,13 @@
-{pkgs, lib, ...}:
 {
+  pkgs,
+  lib,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     autosuggestion = {
       enable = true;
-      strategy = [ "match_prev_cmd" ];
+      strategy = ["match_prev_cmd"];
     };
     enableCompletion = true;
     syntaxHighlighting = {
@@ -18,7 +21,11 @@
       "nhhs" = "nh home switch /home/recluse/dotfiles";
       "nhos" = "nh os switch /home/recluse/dotfiles";
     };
-    # initContent = lib.mkOrder 1000 ''
-    #  '';
+    initContent = lib.mkOrder 500 ''
+      eval "$(starship init zsh)"
+      if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
+        source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
+      fi    
+    '';
   };
 }

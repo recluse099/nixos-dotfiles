@@ -1,6 +1,6 @@
 {pkgs, ...}:
 {
-  fonts.packages = with pkgs; [ 
+  home.packages = with pkgs; [ 
   nerd-fonts.jetbrains-mono
   nerd-fonts.adwaita-mono
   nerd-fonts.fira-code

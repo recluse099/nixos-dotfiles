@@ -2,17 +2,14 @@
   programs = {
     ghostty = {
       enable = true;
-      enableZshIntegration = true;
-      enableBashIntegration = true;
-
       settings = {
         gtk-single-instance = true;
         font-family = "JetBrainsMono Nerd Font";
         font-size = 18;
         freetype-load-flags = ["hinting"];
-        background-opacity = 0.8;
+        background-opacity = 1;
         window-decoration = "auto";
-        shell-integration = "detect";
+        shell-integration = "none";
         bold-is-bright = true;
         command = lib.getExe pkgs.zsh;
         theme = "catppuccin-mocha";

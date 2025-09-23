@@ -119,7 +119,7 @@
       expandtab = true;
     };
     visuals = {
-      nvim-scrollbar.enable = true;
+      nvim-scrollbar.enable = false;
       indent-blankline = {
         enable = true;
         setupOpts = {

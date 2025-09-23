@@ -1,32 +1,3 @@
-# starship.toml
-
-#add_newline = true
-
-#[directory]
-#style = "bold blue"
-#read_only = " "
-#read_only_style = "red"
-
-#[git_branch]
-#symbol = " "
-#style = "purple"
-
-#[character]
-#success_symbol = "[❯](bold green)"
-#error_symbol = "[❯](bold red)"
-
-#[username]
-#show_always = true
-#style_user = "bold purple"
-
-#[hostname]
-#ssh_only = false
-#style = "bold dimmed white"
-
-#[package]
-#symbol = "📦 "
-#style = "dimmed blue"
-
 #Typecraft's Starship Config:
 "$schema" = 'https://starship.rs/config-schema.json'
 
@@ -38,9 +9,9 @@ $os\
 $username\
 [](bg:lavender fg:surface0)\
 $shell\
-[](fg:lavender bg:peach)\
+[](fg:lavender bg:red)\
 $directory\
-[](fg:peach bg:green)\
+[](fg:red bg:green)\
 $git_branch\
 $git_status\
 [](fg:green bg:teal)\
@@ -125,9 +96,9 @@ style_root = "bg:surface0 fg:text"
 format = '[ $user ]($style)'
 
 [directory]
-style = "fg:mantle bg:peach"
+style = "fg:mantle bg:red"
 format = "[ $path ]($style)"
-truncation_length = 0
+truncation_length = 3
 truncate_to_repo = false
 
 [directory.substitutions]
@@ -182,7 +153,7 @@ style = "fg:base bg:teal"
 format = '[ $symbol( $version) ]($style)'
 
 [haskell]
-symbol = ""
+symbol = " "
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
@@ -200,7 +171,7 @@ format = '[ $symbol( $version) ]($style)'
 disabled = false
 time_format = "%R"
 style = "fg:mantle bg:mauve"
-format = '[ $time ]($style)'
+format = '[  $time ]($style)'
 
 [shell]
 disabled = false
@@ -227,6 +198,6 @@ disabled = false
 [character]
 disabled = false
 success_symbol = '[λ](bold fg:sapphire)'
-error_symbol = '[⊥](bold fg:red)'
+error_symbol = '[⊥](bold fg:maroon)'
 vimcmd_symbol = '[V](bold fg:green)'
 
