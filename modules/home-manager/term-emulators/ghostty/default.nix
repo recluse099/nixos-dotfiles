@@ -9,7 +9,7 @@
         freetype-load-flags = ["hinting"];
         background-opacity = 1;
         window-decoration = "auto";
-        shell-integration = "none";
+        shell-integration = "detect";
         bold-is-bright = true;
         command = lib.getExe pkgs.zsh;
         theme = "catppuccin-mocha";

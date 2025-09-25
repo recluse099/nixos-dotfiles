@@ -69,7 +69,7 @@
     autocomplete.blink-cmp.enable = true;
 
     treesitter = {
-      # enable = false;
+      enable = true;
       highlight.enable = true;
       indent.enable = true;
       addDefaultGrammars = true;
@@ -94,8 +94,18 @@
         lsp.server = "nixd";
         treesitter.enable = true;
       };
+
       ts.enable = true;
+
+      lua = {
+        enable = true;
+        format.enable = true;
+        lsp.enable = true;
+        treesitter.enable = true;
+      };
+
       rust.enable = true;
+
       haskell = {
         enable = true;
         lsp.enable = true;
