@@ -1,4 +1,3 @@
-#Typecraft's Starship Config:
 "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = false
@@ -7,14 +6,14 @@ format = """
 [](surface0)\
 $os\
 $username\
-[](bg:lavender fg:surface0)\
+[](bg:lavender fg:surface0)\
 $shell\
-[](fg:lavender bg:red)\
+[](fg:lavender bg:red)\
 $directory\
-[](fg:red bg:green)\
+[](fg:red bg:green)\
 $git_branch\
 $git_status\
-[](fg:green bg:teal)\
+[](fg:green bg:teal)\
 $c\
 $rust\
 $golang\
@@ -24,9 +23,9 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:teal bg:blue)\
+[](fg:teal bg:blue)\
 $docker_context\
-[](fg:blue bg:mauve)\
+[](fg:blue bg:mauve)\
 $time\
 [ ](fg:mauve)\
 $cmd_duration\
@@ -179,7 +178,6 @@ bash_indicator = 'bash'
 fish_indicator = 'fish'
 style = "bg:lavender fg:mantle"
 format = '[ $indicator ]($style)'
-
 
 [fill]
 symbol = '-'

@@ -10,9 +10,9 @@
         background-opacity = 1;
         window-decoration = "auto";
         shell-integration = "detect";
-        bold-is-bright = true;
+        bold-color = "bright";
         command = lib.getExe pkgs.zsh;
-        theme = "catppuccin-mocha";
+        theme = "Catppuccin Mocha";
         keybind = [
           "ctrl+alt+h=goto_split:left"
           "ctrl+alt+l=goto_split:right"

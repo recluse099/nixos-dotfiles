@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nvf.url = "github:notashelf/nvf";
+    nvf.url = "github:notashelf/nvf?ref=v0.8";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -18,11 +18,11 @@
       pkgs = nixpkgs.legacyPackages.${system};
       lib = nixpkgs.lib;
     in {
-      packages.${system}.default =
+      /*packages.${system}.default =
         (nvf.lib.neovimConfiguration {
           inherit pkgs;
           modules = [ ./nvf-configuration.nix ];
-        }).neovim;
+        }).neovim;*/
 
       nixosConfigurations = {
         nixos = lib.nixosSystem {
@@ -30,13 +30,16 @@
           specialArgs = { inherit self; };    #  <- pass self here
           modules = [
             ./configuration.nix
-            nvf.nixosModules.default
+            #nvf.nixosModules.default
           ];
         };
       };
       homeConfigurations.recluse = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [ 
+          nvf.homeManagerModules.default  
+          ./home.nix
+        ];
         extraSpecialArgs = { inherit self; inherit inputs; }; 
       };
     };

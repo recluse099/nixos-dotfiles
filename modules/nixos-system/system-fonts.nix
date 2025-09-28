@@ -7,5 +7,6 @@
   nerd-fonts.droid-sans-mono
   nerd-fonts.symbols-only
   nerd-fonts.comic-shanns-mono
+  cascadia-code
   ];
 }

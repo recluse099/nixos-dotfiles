@@ -12,6 +12,7 @@
       mode = "";
       enableZshIntegration = true;
       enableBashIntegration = true;
+      enableFishIntegration = true;
     };
     settings = {
       shell = lib.getExe pkgs.zsh;

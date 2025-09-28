@@ -7,6 +7,5 @@
     tinymist
     wl-gammarelay-rs
     wl-gammarelay-applet
-    (self.packages.${pkgs.system}.default)
   ];
 }
