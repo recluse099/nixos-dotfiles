@@ -19,6 +19,7 @@
     ];
     settings = {
       mgr = {
+        ratio = [1 2 5];
         sort_by = "natural";
         sort_dir_first = true;
         sort_reverse = false;

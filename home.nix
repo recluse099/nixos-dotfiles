@@ -33,6 +33,7 @@
     TERMINAL = lib.getExe pkgs.ghostty;
     LAUNCHER = /home/recluse/.nix-profile/bin/fuzzel;
     SHELL = /home/recluse/.nix-profile/bin/nu;
+    EDITOR = /home/recluse/.nix-profile/bin/vim;
   };
 
   # Let Home Manager install and manage itself.

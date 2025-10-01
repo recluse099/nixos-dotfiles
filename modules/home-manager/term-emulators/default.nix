@@ -2,6 +2,5 @@
   imports = [
     ./ghostty
     ./kitty
-    ./wezterm
   ];
 }

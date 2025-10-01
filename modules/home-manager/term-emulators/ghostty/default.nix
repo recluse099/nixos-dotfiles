@@ -4,8 +4,8 @@
       enable = true;
       settings = {
         gtk-single-instance = true;
-        font-family = "JetBrainsMono Nerd Font";
-        font-size = 18;
+        font-family = "VictorMono Nerd Font";
+        font-size = 20;
         freetype-load-flags = ["hinting"];
         background-opacity = 1;
         window-decoration = "auto";
@@ -13,6 +13,7 @@
         bold-color = "bright";
         command = lib.getExe pkgs.zsh;
         theme = "Catppuccin Mocha";
+        cursor-style-blink = false;
         keybind = [
           "ctrl+alt+h=goto_split:left"
           "ctrl+alt+l=goto_split:right"

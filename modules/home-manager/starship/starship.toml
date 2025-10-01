@@ -29,6 +29,7 @@ $docker_context\
 $time\
 [ ](fg:mauve)\
 $cmd_duration\
+${custom.bgfill}\
 $line_break$character
 """
 
@@ -199,3 +200,9 @@ success_symbol = '[λ](bold fg:sapphire)'
 error_symbol = '[⊥](bold fg:maroon)'
 vimcmd_symbol = '[V](bold fg:green)'
 
+[custom.bgfill]
+command = "echo a"
+style=" base bg:base"
+when="true"
+shell="sh"
+format = "[$output\u001B\\[K]($style)"

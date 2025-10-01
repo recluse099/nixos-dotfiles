@@ -22,6 +22,7 @@
       background_opacity = 0.8;
       wayland_enable_ime = "no";
       touch_scroll_multiplier = 7;
+      cursor_blink_interval = 0;
     };
   };    
 }

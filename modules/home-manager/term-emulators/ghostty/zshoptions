@@ -1,0 +1,335 @@
+[4mZSH[24m(1)                                General Commands Manual                                [4mZSH[24m(1)
+
+[1mNAME[0m
+       zsh - the Z shell
+
+[1mOVERVIEW[0m
+       Because zsh contains many features, the zsh manual has been split into a number of sections:
+
+       [4mzsh[24m          Zsh overview (this section)
+       [4mzshroadmap[24m   Informal introduction to the manual
+       [4mzshmisc[24m      Anything not fitting into the other sections
+       [4mzshexpn[24m      Zsh command and parameter expansion
+       [4mzshparam[24m     Zsh parameters
+       [4mzshoptions[24m   Zsh options
+       [4mzshbuiltins[24m  Zsh built-in functions
+       [4mzshzle[24m       Zsh command line editing
+       [4mzshcompwid[24m   Zsh completion widgets
+       [4mzshcompsys[24m   Zsh completion system
+       [4mzshcompctl[24m   Zsh completion control
+       [4mzshmodules[24m   Zsh loadable modules
+       [4mzshcalsys[24m    Zsh built-in calendar functions
+       [4mzshtcpsys[24m    Zsh built-in TCP functions
+       [4mzshzftpsys[24m   Zsh built-in FTP client
+       [4mzshcontrib[24m   Additional zsh functions and utilities
+       [4mzshall[24m       Meta-man page containing all of the above
+
+[1mDESCRIPTION[0m
+       Zsh  is  a  UNIX  command  interpreter (shell) usable as an interactive login shell and as a
+       shell script command processor.  Of the standard shells, zsh most closely resembles [1mksh  [22mbut
+       includes many enhancements.  It does not provide compatibility with POSIX or other shells in
+       its default operating mode:  see the section `Compatibility' below.
+
+       Zsh  has command line editing, builtin spelling correction, programmable command completion,
+       shell functions (with autoloading), a history mechanism, and a host of other features.
+
+[1mAUTHOR[0m
+       Zsh was originally written by Paul Falstad.  Zsh is now maintained by  the  members  of  the
+       zsh-workers mailing list [1m<zsh-workers@zsh.org>[22m.  The development is currently coordinated by
+       Peter  Stephenson [1m<pws@zsh.org>[22m.  The coordinator can be contacted at [1m<coordinator@zsh.org>[22m,
+       but matters relating to the code should generally go to the mailing list.
+
+[1mAVAILABILITY[0m
+       Zsh is available from the following HTTP and anonymous FTP site.
+
+       [1mftp://ftp.zsh.org/pub/[0m
+       [1mhttps://www.zsh.org/pub/[0m
+
+       The up-to-date source code is available  via  Git  from  Sourceforge.   See  [1mhttps://source‐[0m
+       [1mforge.net/projects/zsh/ [22mfor details.  A summary of instructions for the archive can be found
+       at [1mhttps://zsh.sourceforge.io/[22m.
+
+[1mMAILING LISTS[0m
+       Zsh has several mailing lists:
+
+       [1m<zsh-announce@zsh.org>[0m
+              Announcements  about  releases, major changes in the shell and the monthly posting of
+              the Zsh FAQ.  (moderated)
+
+       [1m<zsh-users@zsh.org>[0m
+              User discussions.
+
+       [1m<zsh-workers@zsh.org>[0m
+              Hacking, development, bug reports and patches.
+
+       [1m<zsh-security@zsh.org>[0m
+              Private mailing list (the general public cannot subscribe to it) for  discussing  bug
+              reports with security implications, i.e., potential vulnerabilities.
+
+              If you find a security problem in zsh itself, please mail this address.
+
+       To  subscribe  or  unsubscribe,  send  mail to the associated administrative address for the
+       mailing list.
+
+       [1m<zsh-announce-subscribe@zsh.org>[0m
+       [1m<zsh-users-subscribe@zsh.org>[0m
+       [1m<zsh-workers-subscribe@zsh.org>[0m
+       [1m<zsh-announce-unsubscribe@zsh.org>[0m
+       [1m<zsh-users-unsubscribe@zsh.org>[0m
+       [1m<zsh-workers-unsubscribe@zsh.org>[0m
+
+       YOU ONLY NEED TO JOIN ONE OF THE MAILING LISTS AS  THEY  ARE  NESTED.   All  submissions  to
+       [1mzsh-announce [22mare automatically forwarded to [1mzsh-users[22m.  All submissions to [1mzsh-users [22mare au‐
+       tomatically forwarded to [1mzsh-workers[22m.
+
+       If  you  have  problems  subscribing/unsubscribing to any of the mailing lists, send mail to
+       [1m<listmaster@zsh.org>[22m.
+
+       The mailing lists are archived; the archives can be  accessed  via  the  administrative  ad‐
+       dresses    listed    above.     There   is   also   a   hypertext   archive   available   at
+       [1mhttps://www.zsh.org/mla/[22m.
+
+[1mTHE ZSH FAQ[0m
+       Zsh has a  list  of  Frequently  Asked  Questions  (FAQ),  maintained  by  Peter  Stephenson
+       [1m<pws@zsh.org>[22m.  It is regularly posted to the newsgroup [1mcomp.unix.shell [22mand the [1mzsh-announce[0m
+       mailing  list.   The  latest  version  can  be  found  at  any  of  the Zsh FTP sites, or at
+       [1mhttps://www.zsh.org/FAQ/[22m.   The  contact  address  for  FAQ-related  matters   is   [1m<faqmas‐[0m
+       [1mter@zsh.org>[22m.
+
+[1mTHE ZSH WEB PAGE[0m
+       Zsh  has  a  web  page  which  is  located at [1mhttps://www.zsh.org/[22m.  The contact address for
+       web-related matters is [1m<webmaster@zsh.org>[22m.
+
+[1mTHE ZSH USERGUIDE[0m
+       A userguide is currently in preparation.  It is intended to complement the manual, with  ex‐
+       planations  and  hints on issues where the manual can be cabbalistic, hierographic, or down‐
+       right mystifying (for example, the word `hierographic' does not exist).  It can be viewed in
+       its current state at [1mhttps://zsh.sourceforge.io/Guide/[22m.  At the time  of  writing,  chapters
+       dealing with startup files and their contents and the new completion system were essentially
+       complete.
+
+[1mINVOCATION[0m
+       The  following  flags are interpreted by the shell when invoked to determine where the shell
+       will read commands from:
+
+       [1m-c     [22mTake the first argument as a command to execute, rather than reading commands from  a
+              script  or  standard input.  If any further arguments are given, the first one is as‐
+              signed to [1m$0[22m, rather than being used as a positional parameter.
+
+       [1m-i     [22mForce shell to be interactive.  It is still possible to specify a script to execute.
+
+       [1m-s     [22mForce shell to read commands from the standard input.  If the [1m-s [22mflag is not  present
+              and  an argument is given, the first argument is taken to be the pathname of a script
+              to execute.
+
+       If there are any remaining arguments after option processing, and neither of the options  [1m-c[0m
+       or  [1m-s  [22mwas  supplied,  the  first argument is taken as the file name of a script containing
+       shell commands to be executed.  If the option [1mPATH_SCRIPT [22mis set, and the file name does not
+       contain a directory path (i.e. there is no `[1m/[22m' in the name), first the current directory and
+       then the command path given by the variable [1mPATH [22mare searched for the script.  If the option
+       is not set or the file name contains a `[1m/[22m' it is used directly.
+
+       After the first one or two arguments have been appropriated as described above, the  remain‐
+       ing arguments are assigned to the positional parameters.
+
+       For further options, which are common to invocation and the [1mset [22mbuiltin, see [4mzshoptions[24m(1).
+
+       The long option `[1m--emulate[22m' followed (in a separate word) by an emulation mode may be passed
+       to  the  shell.   The  emulation modes are those described for the [1memulate [22mbuiltin, see [4mzsh‐[0m
+       [4mbuiltins[24m(1).  The `[1m--emulate[22m' option must precede any other options (which  might  otherwise
+       be  overridden),  but following options are honoured, so may be used to modify the requested
+       emulation mode.  Note that certain extra steps are taken to ensure a smooth  emulation  when
+       this  option  is used compared with the [1memulate [22mcommand within the shell: for example, vari‐
+       ables that conflict with POSIX usage such as [1mpath [22mare not defined within the shell.
+
+       Options may be specified by name using the [1m-o [22moption.  [1m-o [22macts like a single-letter  option,
+       but takes a following string as the option name.  For example,
+
+              [1mzsh -x -o shwordsplit scr[0m
+
+       runs  the  script  [1mscr[22m,  setting  the [1mXTRACE [22moption by the corresponding letter `[1m-x[22m' and the
+       [1mSH_WORD_SPLIT [22moption by name.  Options may be turned [4moff[24m by name by using [1m+o [22minstead of  [1m-o[22m.
+       [1m-o  [22mcan be stacked up with preceding single-letter options, so for example `[1m-xo shwordsplit[22m'
+       or `[1m-xoshwordsplit[22m' is equivalent to `[1m-x -o shwordsplit[22m'.
+
+       Options may also be specified by name in GNU long option style, `[1m--[4m[22moption-name[24m'.  When  this
+       is  done, `[1m-[22m' characters in the option name are permitted: they are translated into `[1m_[22m', and
+       thus ignored.  So, for example, `[1mzsh --sh-word-split[22m' invokes zsh with the [1mSH_WORD_SPLIT [22mop‐
+       tion turned on.  Like other option syntaxes, options can be turned off by replacing the ini‐
+       tial `[1m-[22m' with a `[1m+[22m'; thus `[1m+-sh-word-split[22m' is equivalent to  `[1m--no-sh-word-split[22m'.   Unlike
+       other  option  syntaxes, GNU-style long options cannot be stacked with any other options, so
+       for example `[1m-x-shwordsplit[22m' is an error, rather than being treated like `[1m-x --shwordsplit[22m'.
+
+       The special GNU-style option `[1m--version[22m' is handled; it sends to standard output the shell's
+       version information, then exits successfully.  `[1m--help[22m' is also handled; it sends  to  stan‐
+       dard  output a list of options that can be used when invoking the shell, then exits success‐
+       fully.
+
+       Option processing may be finished, allowing following arguments that start with `[1m-[22m'  or  `[1m+[22m'
+       to be treated as normal arguments, in two ways.  Firstly, a lone `[1m-[22m' (or `[1m+[22m') as an argument
+       by  itself  ends option processing.  Secondly, a special option `[1m--[22m' (or `[1m+-[22m'), which may be
+       specified on its own (which is the standard POSIX usage) or may be  stacked  with  preceding
+       options  (so `[1m-x-[22m' is equivalent to `[1m-x --[22m').  Options are not permitted to be stacked after
+       `[1m--[22m' (so `[1m-x-f[22m' is an error), but note the GNU-style  option  form  discussed  above,  where
+       `[1m--shwordsplit[22m' is permitted and does not end option processing.
+
+       Except  when  the  [1msh[22m/[1mksh [22memulation single-letter options are in effect, the option `[1m-b[22m' (or
+       `[1m+b[22m') ends option processing.  `[1m-b[22m' is like `[1m--[22m', except that further single-letter  options
+       can be stacked after the `[1m-b[22m' and will take effect as normal.
+
+[1mCOMPATIBILITY[0m
+       Zsh tries to emulate [1msh [22mor [1mksh [22mwhen it is invoked as [1msh [22mor [1mksh [22mrespectively; more precisely,
+       it  looks at the first letter of the name by which it was invoked, excluding any initial `[1mr[22m'
+       (assumed to stand for `restricted'), and if that is `[1mb[22m', `[1ms[22m' or `[1mk[22m' it will  emulate  [1msh  [22mor
+       [1mksh[22m.  Furthermore, if invoked as [1msu [22m(which happens on certain systems when the shell is exe‐
+       cuted  by the [1msu [22mcommand), the shell will try to find an alternative name from the [1mSHELL [22men‐
+       vironment variable and perform emulation based on that.
+
+       In [1msh [22mand [1mksh [22mcompatibility modes the following parameters are not special and not  initial‐
+       ized  by  the  shell: [1mARGC[22m, [1margv[22m, [1mcdpath[22m, [1mfignore[22m, [1mfpath[22m, [1mHISTCHARS[22m, [1mmailpath[22m, [1mMANPATH[22m, [1mman‐[0m
+       [1mpath[22m, [1mpath[22m, [1mprompt[22m, [1mPROMPT[22m, [1mPROMPT2[22m, [1mPROMPT3[22m, [1mPROMPT4[22m, [1mpsvar[22m, [1mstatus[22m.
+
+       The usual zsh startup/shutdown scripts are not executed.  Login shells  source  [1m/etc/profile[0m
+       followed  by  [1m$HOME/.profile[22m.  If the [1mENV [22menvironment variable is set on invocation, [1m$ENV [22mis
+       sourced after the profile scripts.  The value of [1mENV [22mis subjected  to  parameter  expansion,
+       command substitution, and arithmetic expansion before being interpreted as a pathname.  Note
+       that the [1mPRIVILEGED [22moption also affects the execution of startup files.
+
+       The  following  options  are  set  if  the  shell  is  invoked as [1msh [22mor [1mksh[22m: [1mNO_BAD_PATTERN[22m,
+       [1mNO_BANG_HIST[22m,  [1mNO_BG_NICE[22m,  [1mNO_EQUALS[22m,  [1mNO_FUNCTION_ARGZERO[22m,  [1mGLOB_SUBST[22m,  [1mNO_GLOBAL_EXPORT[22m,
+       [1mNO_HUP[22m, [1mINTERACTIVE_COMMENTS[22m, [1mKSH_ARRAYS[22m, [1mNO_MULTIOS[22m, [1mNO_NOMATCH[22m, [1mNO_NOTIFY[22m, [1mPOSIX_BUILTINS[22m,
+       [1mNO_PROMPT_PERCENT[22m,    [1mRM_STAR_SILENT[22m,    [1mSH_FILE_EXPANSION[22m,    [1mSH_GLOB[22m,   [1mSH_OPTION_LETTERS[22m,
+       [1mSH_WORD_SPLIT[22m.  Additionally the [1mBSD_ECHO [22mand [1mIGNORE_BRACES [22moptions are set if  zsh  is  in‐
+       voked  as [1msh[22m.  Also, the [1mKSH_OPTION_PRINT[22m, [1mLOCAL_OPTIONS[22m, [1mPROMPT_BANG[22m, [1mPROMPT_SUBST [22mand [1mSIN‐[0m
+       [1mGLE_LINE_ZLE [22moptions are set if zsh is invoked as [1mksh[22m.
+
+       Please note that, whilst reasonable efforts are taken to address incompatibilities when they
+       arise, zsh does not guarantee complete emulation of other shells, nor POSIX compliance.  For
+       more  information on the differences between zsh and other shells, please refer to chapter 2
+       of the shell FAQ, [1mhttps://www.zsh.org/FAQ/[22m.
+
+[1mRESTRICTED SHELL[0m
+       When the basename of the command used to invoke zsh starts with the letter `[1mr[22m' or  the  `[1m-r[22m'
+       command line option is supplied at invocation, the shell becomes restricted.  Emulation mode
+       is  determined  after  stripping the letter `[1mr[22m' from the invocation name.  The following are
+       disabled in restricted mode:
+
+       •      changing directories with the [1mcd [22mbuiltin
+
+       •      changing or unsetting the [1mEGID[22m,  [1mEUID[22m,  [1mGID[22m,  [1mHISTFILE[22m,  [1mHISTSIZE[22m,  [1mIFS[22m,  [1mLD_AOUT_LI‐[0m
+              [1mBRARY_PATH[22m,  [1mLD_AOUT_PRELOAD[22m,  [1mLD_LIBRARY_PATH[22m, [1mLD_PRELOAD[22m, [1mMODULE_PATH[22m, [1mmodule_path[22m,
+              [1mPATH[22m, [1mpath[22m, [1mSHELL[22m, [1mUID [22mand [1mUSERNAME [22mparameters
+
+       •      specifying command names containing [1m/[0m
+
+       •      specifying command pathnames using [1mhash[0m
+
+       •      redirecting output to files
+
+       •      using the [1mexec [22mbuiltin command to replace the shell with another command
+
+       •      using [1mjobs -Z [22mto overwrite the shell process' argument and environment space
+
+       •      using the [1mARGV0 [22mparameter to override [1margv[0] [22mfor external commands
+
+       •      turning off restricted mode with [1mset +r [22mor [1munsetopt RESTRICTED[0m
+
+       These restrictions are enforced after processing  the  startup  files.   The  startup  files
+       should  set  up  [1mPATH [22mto point to a directory of commands which can be safely invoked in the
+       restricted environment.  They may  also  add  further  restrictions  by  disabling  selected
+       builtins.
+
+       Restricted mode can also be activated any time by setting the [1mRESTRICTED [22moption.  This imme‐
+       diately  enables  all  the  restrictions  described  above  even  if the shell still has not
+       processed all startup files.
+
+       A shell [4mRestricted[24m [4mMode[24m is an outdated way to restrict what users may  do:   modern  systems
+       have  better,  safer  and  more reliable ways to confine user actions, such as [4mchroot[24m [4mjails[24m,
+       [4mcontainers[24m and [4mzones[24m.
+
+       A restricted shell is very difficult to implement safely.  The feature may be removed  in  a
+       future version of zsh.
+
+       It  is  important  to realise that the restrictions only apply to the shell, not to the com‐
+       mands it runs (except for some shell builtins).  While a restricted shell can only  run  the
+       restricted  list of commands accessible via the predefined `[1mPATH[22m' variable, it does not pre‐
+       vent those commands from running any other command.
+
+       As an example, if `[1menv[22m' is among the list of [4mallowed[24m commands, then it allows  the  user  to
+       run any command as `[1menv[22m' is not a shell builtin command and can run arbitrary executables.
+
+       So  when implementing a restricted shell framework it is important to be fully aware of what
+       actions each of the [4mallowed[24m commands or features (which may be regarded as [4mmodules[24m) can per‐
+       form.
+
+       Many commands can have their behaviour affected by environment variables.   Except  for  the
+       few listed above, zsh does not restrict the setting of environment variables.
+
+       If  a  `[1mperl[22m', `[1mpython[22m', `[1mbash[22m', or other general purpose interpreted script it treated as a
+       restricted command, the user can work around the restriction by  setting  specially  crafted
+       `[1mPERL5LIB[22m',  `[1mPYTHONPATH[22m',  `[1mBASHENV[22m' (etc.) environment variables. On GNU systems, any com‐
+       mand can be made to run arbitrary code when performing character set  conversion  (including
+       zsh itself) by setting a `[1mGCONV_PATH[22m' environment variable.  Those are only a few examples.
+
+       Bear  in  mind  that, contrary to some other shells, `[1mreadonly[22m' is not a security feature in
+       zsh as it can be undone and so cannot be used to mitigate the above.
+
+       A restricted shell only works if the allowed commands are few and carefully  written  so  as
+       not  to grant more access to users than intended.  It is also important to restrict what zsh
+       module the user  may  load  as  some  of  them,  such  as  `[1mzsh/system[22m',  `[1mzsh/mapfile[22m'  and
+       `[1mzsh/files[22m', allow bypassing most of the restrictions.
+
+[1mSTARTUP/SHUTDOWN FILES[0m
+       Commands  are  first read from [1m/etc/zshenv[22m; this cannot be overridden.  Subsequent behaviour
+       is modified by the [1mRCS [22mand [1mGLOBAL_RCS [22moptions; the former affects all startup  files,  while
+       the  second only affects global startup files (those shown here with an path starting with a
+       [1m/[22m).  If one of the options is unset at any point, any subsequent startup file(s) of the cor‐
+       responding type will not be read.  It is also possible for a file in [1m$ZDOTDIR  [22mto  re-enable
+       [1mGLOBAL_RCS[22m. Both [1mRCS [22mand [1mGLOBAL_RCS [22mare set by default.
+
+       Commands  are  then read from [1m$ZDOTDIR/.zshenv[22m.  If the shell is a login shell, commands are
+       read from [1m/etc/zprofile [22mand then [1m$ZDOTDIR/.zprofile[22m.  Then, if  the  shell  is  interactive,
+       commands  are read from [1m/etc/zshrc [22mand then [1m$ZDOTDIR/.zshrc[22m.  Finally, if the shell is a lo‐
+       gin shell, [1m/etc/zlogin [22mand [1m$ZDOTDIR/.zlogin [22mare read.
+
+       When a login shell exits, the files [1m$ZDOTDIR/.zlogout [22mand then [1m/etc/zlogout [22mare read.   This
+       happens with either an explicit exit via the [1mexit [22mor [1mlogout [22mcommands, or an implicit exit by
+       reading end-of-file from the terminal.  However, if the shell terminates due to [1mexec[22m'ing an‐
+       other  process,  the  logout  files  are  not  read.  These are also affected by the [1mRCS [22mand
+       [1mGLOBAL_RCS [22moptions.  Note also that the [1mRCS [22moption affects the saving of history files, i.e.
+       if [1mRCS [22mis unset when the shell exits, no history file will be saved.
+
+       If [1mZDOTDIR [22mis unset, [1mHOME [22mis used instead.  Files listed above as being in [1m/etc  [22mmay  be  in
+       another directory, depending on the installation.
+
+       As  [1m/etc/zshenv [22mis run for all instances of zsh, it is important that it be kept as small as
+       possible.  In particular, it is a good idea to put code that does not need  to  be  run  for
+       every single shell behind a test of the form `[1mif [[ -o rcs ]]; then ...[22m' so that it will not
+       be executed when zsh is invoked with the `[1m-f[22m' option.
+
+       Any  of  these  files  may  be  pre-compiled  with  the  [1mzcompile  [22mbuiltin command (see [4mzsh‐[0m
+       [4mbuiltins[24m(1)).  If a compiled file exists (named for the original file plus the  [1m.zwc  [22mexten‐
+       sion) and it is newer than the original file, the compiled file will be used instead.
+
+[1mFILES[0m
+       [1m$ZDOTDIR/.zshenv[0m
+       [1m$ZDOTDIR/.zprofile[0m
+       [1m$ZDOTDIR/.zshrc[0m
+       [1m$ZDOTDIR/.zlogin[0m
+       [1m$ZDOTDIR/.zlogout[0m
+       [1m${TMPPREFIX}*   [22m(default is /tmp/zsh*)
+       [1m/etc/zshenv[0m
+       [1m/etc/zprofile[0m
+       [1m/etc/zshrc[0m
+       [1m/etc/zlogin[0m
+       [1m/etc/zlogout    [22m(installation-specific - [1m/etc [22mis the default)
+
+[1mSEE ALSO[0m
+       [4msh[24m(1),  [4mcsh[24m(1),  [4mtcsh[24m(1),  [4mrc[24m(1),  [4mbash[24m(1), [4mksh[24m(1), [4mzshall[24m(1), [4mzshbuiltins[24m(1), [4mzshcalsys[24m(1),
+       [4mzshcompwid[24m(1), [4mzshcompsys[24m(1), [4mzshcompctl[24m(1), [4mzshcontrib[24m(1), [4mzshexpn[24m(1), [4mzshmisc[24m(1),  [4mzshmod‐[0m
+       [4mules[24m(1), [4mzshoptions[24m(1), [4mzshparam[24m(1), [4mzshroadmap[24m(1), [4mzshtcpsys[24m(1), [4mzshzftpsys[24m(1), [4mzshzle[24m(1)
+
+       [1mIEEE  Standard  for  information  Technology - Portable Operating System Interface (POSIX) -[0m
+       [1mPart 2: Shell and Utilities[22m, IEEE Inc, 1993, ISBN 1-55937-255-9.
+
+zsh 5.9                                     May 14, 2022                                     [4mZSH[24m(1)
