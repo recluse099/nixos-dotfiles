@@ -23,6 +23,21 @@
     };
     initContent = lib.mkOrder 500 ''
       eval "$(starship init zsh)"
+      # Prevent blinking cursor.
+      function __set_beam_cursor {
+        echo -ne '\e[6 q'
+      }
+      function __set_block_cursor {
+        echo -ne '\e[2 q'
+      }
+      function zle-keymap-select {
+        case $KEYMAP in
+          vicmd) __set_block_cursor;;
+          viins|main) __set_beam_cursor;;
+        esac
+      }
+      zle -N zle-keymap-select
+      precmd_functions+=(__set_beam_cursor)
     '';
   };
 }

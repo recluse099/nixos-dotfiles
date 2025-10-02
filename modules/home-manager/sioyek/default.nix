@@ -18,10 +18,10 @@
       "ui_text_color" = "0.804 0.839 0.957"; # text
       "ui_selected_background_color" = "0.118 0.118 0.180"; # base
       "ui_selected_text_color" = "0.651 0.678 0.784"; # subtext0
-      "page_seperator_color" = "0.094 0.094 0.145"; # mantle
+      "page_separator_color" = "0.0667 0.0667 0.1059"; # crust
 
       # ---Other---
-      "page_seperator_width" = "5";
+      "page_separator_width" = "7";
       "touchpad_sensitivity" = "1";
       "should_launch_new_window" = "1";
       "show_document_name_in_statusbar" = "1";

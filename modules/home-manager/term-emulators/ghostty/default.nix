@@ -10,10 +10,12 @@
         background-opacity = 1;
         window-decoration = "auto";
         shell-integration = "detect";
+        shell-integration-features = "no-cursor";
         bold-color = "bright";
         command = lib.getExe pkgs.zsh;
         theme = "Catppuccin Mocha";
         cursor-style-blink = false;
+        cursor-style = "bar";
         keybind = [
           "ctrl+alt+h=goto_split:left"
           "ctrl+alt+l=goto_split:right"

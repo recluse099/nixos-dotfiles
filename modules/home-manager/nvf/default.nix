@@ -1,8 +1,7 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.nvf = {
     enableManpages = true;
-    enable = true; 
+    enable = true;
     settings.vim = {
       theme = {
         enable = true;
@@ -29,7 +28,7 @@
           };
           "lua_ls" = {
             enable = true;
-            filetypes = [ "lua" ];
+            filetypes = ["lua"];
           };
         };
       };
@@ -81,7 +80,7 @@
         highlight.enable = true;
         indent.enable = true;
         addDefaultGrammars = true;
-        highlight.disable = [ ];
+        highlight.disable = [];
       };
 
       diagnostics = {
@@ -99,7 +98,7 @@
           format.enable = true;
           format.type = "alejandra";
           lsp.enable = true;
-          lsp.servers = [ "nixd" "nil" ];
+          lsp.servers = ["nixd" "nil"];
           treesitter.enable = true;
         };
 
@@ -170,7 +169,7 @@
       lazy.plugins = {
         "typst.vim" = {
           package = pkgs.vimPlugins.typst-vim;
-          ft = [ "typst" ];
+          ft = ["typst"];
         };
         #"haskell-scope-highlighting.nvim" = {
         #package = pkgs.vimPlugins.haskell-scope-highlighting-nvim;
