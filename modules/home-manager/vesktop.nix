@@ -13,8 +13,8 @@
        **/
       @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-lavender.theme.css");
       :root {
-        --font-display: ${"JetBrainsMono Nerd Font"} !important;
-        --font-primary: ${"JetBrainsMono Nerd Font"} !important;
+        --font-display: ${"Fantasque Sans Mono"} !important;
+        --font-primary: ${"Fantasque Sans Mono"} !important;
       }
     '';
   };

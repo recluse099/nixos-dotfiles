@@ -9,5 +9,6 @@
     cascadia-code
     nerd-fonts.monaspace
     nerd-fonts.victor-mono
+    fantasque-sans-mono
   ];
 }

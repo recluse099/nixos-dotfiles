@@ -2,7 +2,7 @@
   services.wpaperd = {
     enable = true;
     settings = {
-      eDP-1 = {
+      default = {
         path = ./wallpapers;
         sorting = "ascending";
       };

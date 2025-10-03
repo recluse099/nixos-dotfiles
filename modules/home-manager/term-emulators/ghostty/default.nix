@@ -7,7 +7,7 @@
         font-family = "VictorMono Nerd Font";
         font-size = 20;
         freetype-load-flags = ["hinting"];
-        background-opacity = 1;
+        background-opacity = 0.8;
         window-decoration = "auto";
         shell-integration = "detect";
         shell-integration-features = "no-cursor";

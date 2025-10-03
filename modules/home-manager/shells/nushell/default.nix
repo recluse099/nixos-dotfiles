@@ -1,4 +1,4 @@
-{pkgs, lib, config, ...}: {
+{pkgs, ...}: {
   programs = {
     nushell = {
       enable = true;
@@ -12,6 +12,10 @@
         "nhos" = "nh os switch /home/recluse/dotfiles";
         "la" = "eza";
       };
+      plugins = with pkgs.nushellPlugins; [
+        gstat
+        highlight
+      ];
       settings = {
         show_banner = false;
         buffer_editor = "nvim";
