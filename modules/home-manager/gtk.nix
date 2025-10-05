@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   gtk = {
     enable = true;
     iconTheme = {
@@ -7,7 +6,7 @@
       package = pkgs.catppuccin-papirus-folders.override {
         accent = "blue";
         flavor = "mocha";
-      };  
+      };
     };
     theme = {
       package = pkgs.catppuccin-gtk.override {
@@ -16,6 +15,9 @@
       };
       name = "catppuccin-mocha-blue-standard";
     };
+    cursorTheme = {
+      name = "catppuccin-mocha-dark-cursors";
+      package = pkgs.catppuccin-cursors.mochaDark;
+    };
   };
 }
-

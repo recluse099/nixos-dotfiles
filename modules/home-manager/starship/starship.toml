@@ -202,7 +202,7 @@ vimcmd_symbol = '[V](bold fg:green)'
 
 [custom.bgfill]
 command = "echo a"
-style=" base bg:base"
+style=" base bg:none"
 when="true"
 shell="sh"
 format = "[$output\u001B\\[K]($style)"

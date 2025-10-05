@@ -3,8 +3,8 @@
     enable = true;
     font = {
       package = pkgs.nerd-fonts.fantasque-sans-mono;
-      name = "FantasqueSansM Nerd Font"; 
-      size = 28;
+      name = "VictorMono Nerd Font"; 
+      size = 24;
     };
     themeFile = "Catppuccin-Mocha";
     enableGitIntegration = true;

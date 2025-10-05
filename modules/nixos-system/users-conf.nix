@@ -6,7 +6,7 @@
   extraGroups = [ "networkmanager" "wheel" "video" ];
   shell = lib.getExe pkgs.zsh;
   # packages = with pkgs; [
-  #  thunderbird
   # ];
   };
+  nix.settings.trusted-users = [ "recluse" ];
 }
