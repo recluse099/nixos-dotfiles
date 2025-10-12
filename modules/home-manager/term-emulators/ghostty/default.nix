@@ -5,9 +5,9 @@
       settings = {
         gtk-single-instance = true;
         font-family = "VictorMono Nerd Font";
-        font-size = 20;
+        font-size = 19;
         freetype-load-flags = ["hinting"];
-        background-opacity = 0.9;
+        background-opacity = 1;
         window-decoration = "auto";
         shell-integration = "detect";
         shell-integration-features = "no-cursor";
@@ -16,6 +16,8 @@
         theme = "Catppuccin Mocha";
         cursor-style-blink = false;
         cursor-style = "bar";
+        window-padding-y = "0";
+        window-padding-balance = true;
         keybind = [
           "ctrl+alt+h=goto_split:left"
           "ctrl+alt+l=goto_split:right"

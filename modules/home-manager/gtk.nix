@@ -15,9 +15,9 @@
       };
       name = "catppuccin-mocha-blue-standard";
     };
-    cursorTheme = {
-      name = "catppuccin-mocha-dark-cursors";
-      package = pkgs.catppuccin-cursors.mochaDark;
-    };
+    #cursorTheme = {
+    #  name = "catppuccin-mocha-dark-cursors";
+    #  package = pkgs.catppuccin-cursors.mochaDark;
+    #};
   };
 }

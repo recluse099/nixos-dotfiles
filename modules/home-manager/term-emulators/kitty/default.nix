@@ -19,7 +19,7 @@
       editor = "nvim";
       linux_display_server = "wayland";
       enable_audio_bell = "no";
-      background_opacity = 0.8;
+      background_opacity = 0.9;
       wayland_enable_ime = "no";
       touch_scroll_multiplier = 7;
       cursor_blink_interval = 0;

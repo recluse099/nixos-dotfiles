@@ -3,6 +3,7 @@
     enableManpages = true;
     enable = true;
     settings.vim = {
+      keymaps = import ./keymaps.nix;
       theme = {
         enable = true;
         name = "catppuccin"; # onedark
