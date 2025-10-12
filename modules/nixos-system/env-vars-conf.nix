@@ -1,6 +1,7 @@
 {pkgs, lib, self, ...}:
 {
   environment.variables = {
-    #EDITOR = lib.getExe self.packages.${pkgs.system}.default;
+    EDITOR = "nvim";
+    TERMINAL = lib.getExe pkgs.ghostty;
   };
 }

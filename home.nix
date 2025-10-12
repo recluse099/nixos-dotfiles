@@ -32,7 +32,7 @@
   home.sessionVariables = {
     TERMINAL = lib.getExe pkgs.ghostty;
     LAUNCHER = /home/recluse/.nix-profile/bin/fuzzel;
-    SHELL = /home/recluse/.nix-profile/bin/nu;
+    SHELL = lib.getExe pkgs.zsh;
     EDITOR = /home/recluse/.nix-profile/bin/vim;
   };
 
