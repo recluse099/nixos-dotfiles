@@ -5,7 +5,7 @@
       settings = {
         gtk-single-instance = true;
         font-family = "VictorMono Nerd Font";
-        font-size = 19;
+        font-size = 18;
         freetype-load-flags = ["hinting"];
         background-opacity = 1;
         window-decoration = "auto";

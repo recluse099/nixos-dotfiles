@@ -4,8 +4,9 @@
     clean = {
       enable = true;
       dates = "weekly";
+      extraArgs = "--keep 10";
     };
-    flake = "/home/recluse/source/nix";
+    flake = "/home/recluse/dotfiles";
   };
 }
 
