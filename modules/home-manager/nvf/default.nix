@@ -120,7 +120,6 @@
           #lsp.enable = true;
           #lsp.package = pkgs.haskell-language-server;
           treesitter.enable = true;
-          dap.enable = true;
         };
       };
       clipboard = {

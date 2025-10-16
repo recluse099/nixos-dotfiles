@@ -14,7 +14,6 @@
       };
       plugins = with pkgs.nushellPlugins; [
         gstat
-        highlight
       ];
       settings = {
         show_banner = false;
