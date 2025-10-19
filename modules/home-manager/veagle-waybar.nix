@@ -10,7 +10,7 @@
         }
 
         window#waybar {
-          background-color: transparent;
+          background-color: #1e1e2e;
           border-radius: 6px; 
           color: #cdd6f4;
           opacity: 1;
