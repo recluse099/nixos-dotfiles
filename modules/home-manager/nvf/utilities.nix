@@ -1,0 +1,3 @@
+{
+  yazi-nvim.enable = true;
+}

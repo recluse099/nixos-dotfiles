@@ -10,7 +10,7 @@
       "text_highlight_color" = "0.98 0.7 0.53"; # peach 
       "search_highlight_color" = "0.96 0.76 0.90"; # pink
       "custom_background_color" = "0.118 0.118 0.180"; # base
-      "custom_text_color" = "0.804 0.839 0.957"; # text
+      "custom_text_color" = "0.729 0.761 0.871"; # subtext 1
       "custom_color_mode_empty_background_color" = "0.094 0.094 0.145"; # mantle
       "status_bar_color" = "0.192 0.196 0.267"; # surface0
       "status_bar_text_color" = "0.804 0.839 0.957"; # text

@@ -3,6 +3,11 @@
     enableManpages = true;
     enable = true;
     settings.vim = {
+      tabline.nvimBufferline = {
+        enable = true;
+        setupOpts.options.always_show_bufferline = false;
+      };
+      utility = import ./utilities.nix;
       keymaps = import ./keymaps.nix;
       theme = {
         enable = true;
@@ -154,8 +159,7 @@
         yuck = {
           package = pkgs.vimPlugins.yuck-vim;
         };
-        vim-stylish-haskell = {
-          # formatter, not syntax highlighter
+        vim-stylish-haskell = { # formatter, not syntax highlighter
           package = pkgs.vimPlugins.vim-stylish-haskell;
         };
         haskell-vim = {

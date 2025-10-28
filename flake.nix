@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-quick-update.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nvf.url = "github:notashelf/nvf?ref=v0.8";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
