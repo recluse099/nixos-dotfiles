@@ -5,7 +5,10 @@
     userName = "recluse0";
     extraConfig = {
       credential.helper = "store"; 
-      core.askpass = ""; # Any other git config settings
+      core.askpass = ""; 
+      init = {
+        defaultBranch = "main";
+      };
     };
   };
 }

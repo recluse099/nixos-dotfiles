@@ -4,7 +4,6 @@ add_newline = false
 
 format = """
 [](surface0)\
-$os\
 $username\
 [](bg:lavender fg:surface0)\
 $shell\
@@ -24,10 +23,8 @@ $kotlin\
 $haskell\
 $python\
 [](fg:teal bg:blue)\
-$docker_context\
-[](fg:blue bg:mauve)\
-$time\
-[ ](fg:mauve)\
+$nix_shell\
+[ ](fg:blue)\
 $cmd_duration\
 ${custom.bgfill}\
 $line_break$character
@@ -164,11 +161,11 @@ format = '[ $symbol( $version) ]($style)'
 
 [docker_context]
 symbol = ""
-style = "fg:base bg:teal"
+style = "fg:base bg:blue"
 format = '[ $symbol( $version) ]($style)'
 
 [time]
-disabled = false
+disabled = true
 time_format = "%R"
 style = "fg:mantle bg:mauve"
 format = '[  $time ]($style)'
@@ -188,8 +185,13 @@ style = 'green'
 disabled = false
 show_milliseconds = true
 min_time = 500
-format = " in $duration"
+format = ' in $duration'
 show_notifications = true
+
+[nix_shell]
+disabled = false
+format = '[ $state( \($name\))]($style)'
+style = "fg:base bg:blue"
 
 [line_break]
 disabled = false

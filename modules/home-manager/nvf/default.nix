@@ -102,7 +102,7 @@
         nix = {
           enable = true;
           format.enable = true;
-          format.type = "alejandra";
+          format.type = "nixfmt";
           lsp.enable = true;
           lsp.servers = ["nixd" "nil"];
           treesitter.enable = true;
