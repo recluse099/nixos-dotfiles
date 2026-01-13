@@ -1,22 +1,34 @@
 { pkgs, ... }:
 {
-  xdg.portal = {
-    enable = true;
-    config = {
-      niri = {
-        default = [
-          "gnome"
+  xdg = {
+    portal = {
+      enable = true;
+      config = {
+        niri = {
+          default = [
+            "wlr"
+            "gtk"
+            "gnome"
+          ];
+          "org.freedesktop.impl.portal.FileChooser" = "gtk";
+        };
+        common.default = [
+          "wlr"
           "gtk"
+          "gnome"
         ];
-        "org.freedesktop.impl.portal.FileChooser" = "gnome";
       };
-    };
-    extraPortals = builtins.attrValues {
-      inherit (pkgs)
-        xdg-desktop-portal-gnome
-        xdg-desktop-portal-gtk
-        ;
+      wlr.enable = true;
+      xdgOpenUsePortal = true;
+      extraPortals = builtins.attrValues {
+        inherit (pkgs)
+          xdg-desktop-portal-gtk
+          xdg-desktop-portal-gnome
+          ;
+        inherit (pkgs.kdePackages)
+          xdg-desktop-portal-kde
+          ;
+      };
     };
   };
 }
-

@@ -30,7 +30,7 @@ ${custom.bgfill}\
 $line_break$character
 """
 
-palette = 'catppuccin_mocha'
+palette = 'catppuccin_frappe'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
@@ -59,6 +59,34 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
+
+[palettes.catppuccin_frappe]
+rosewater = "#f2d5cf"
+flamingo  = "#eebebe"
+pink      = "#f4b8e4"
+mauve     = "#ca9ee6"
+red       = "#e78284"
+maroon    = "#ea999c"
+peach     = "#ef9f76"
+yellow    = "#e5c890"
+green     = "#a6d189"
+teal      = "#81c8be"
+sky       = "#99d1db"
+sapphire  = "#85c1dc"
+blue      = "#8caaee"
+lavender  = "#babbf1"
+text      = "#c6d0f5"
+subtext1  = "#b5bfe2"
+subtext0  = "#a5adce"
+overlay2  = "#949cbb"
+overlay1  = "#838ba7"
+overlay0  = "#737994"
+surface2  = "#626880"
+surface1  = "#51576d"
+surface0  = "#414559"
+base      = "#303446"
+mantle    = "#292c3c"
+crust     = "#232634"
 
 [os]
 disabled = false
@@ -90,12 +118,12 @@ NixOS = " "
 show_always = true
 style_user = "bg:surface0 fg:text"
 style_root = "bg:surface0 fg:text"
-format = '[ $user ]($style)'
+format = '[$user ]($style)'
 
 [directory]
 style = "fg:mantle bg:red"
 format = "[ $path ]($style)"
-truncation_length = 3
+truncation_length = 2
 truncate_to_repo = false
 
 [directory.substitutions]
@@ -184,14 +212,16 @@ style = 'green'
 [cmd_duration]
 disabled = false
 show_milliseconds = true
-min_time = 500
-format = ' in $duration'
+min_time = 0
+format = 'in $duration'
 show_notifications = true
 
 [nix_shell]
 disabled = false
-format = '[ $state( \($name\))]($style)'
+format = '[ ($state )($name) ]($style)'
 style = "fg:base bg:blue"
+impure_msg = ''
+pure_msg = 'pure'
 
 [line_break]
 disabled = false
@@ -204,7 +234,7 @@ vimcmd_symbol = '[V](bold fg:green)'
 
 [custom.bgfill]
 command = "echo a"
-style=" base bg:none"
+style="base bg:none fg:#1e1e2e"
 when="true"
 shell="sh"
 format = "[$output\u001B\\[K]($style)"

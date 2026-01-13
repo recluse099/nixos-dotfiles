@@ -4,7 +4,7 @@
     font = {
       package = pkgs.nerd-fonts.fantasque-sans-mono;
       name = "VictorMono Nerd Font"; 
-      size = 24;
+      size = 22;
     };
     themeFile = "Catppuccin-Mocha";
     enableGitIntegration = true;

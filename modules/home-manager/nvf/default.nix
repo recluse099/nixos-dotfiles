@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.nvf = {
     enableManpages = true;
     enable = true;
@@ -34,10 +35,21 @@
           };
           "lua_ls" = {
             enable = true;
-            filetypes = ["lua"];
+            filetypes = [ "lua" ];
           };
+          /*
+            "hls" = {
+              enable = true;
+              cmd = [ "haskell-language-server" ];
+            };
+          */
         };
       };
+      languages =
+        let
+          language-module = import ./language-modules.nix;
+        in
+        language-module.languages;
       globals = {
         haskell_enable_quantification = 1; # enable highlighting of `forall`
         haskell_enable_recursivedo = 1; # enable highlighting of `mdo` and `rec`
@@ -86,7 +98,7 @@
         highlight.enable = true;
         indent.enable = true;
         addDefaultGrammars = true;
-        highlight.disable = [];
+        highlight.disable = [ ];
       };
 
       diagnostics = {
@@ -94,37 +106,6 @@
         config = {
           float = true;
           Float.scope = "buffer";
-        };
-      };
-      languages = {
-        enableTreesitter = true;
-
-        nix = {
-          enable = true;
-          format.enable = true;
-          format.type = "nixfmt";
-          lsp.enable = true;
-          lsp.servers = ["nixd" "nil"];
-          treesitter.enable = true;
-        };
-
-        ts.enable = true;
-
-        lua = {
-          enable = false;
-          #format.enable = true;
-          #lsp.enable = true;
-          #treesitter.enable = true;
-        };
-
-        rust.enable = true;
-        rust.lsp.enable = true;
-
-        haskell = {
-          enable = true;
-          #lsp.enable = true;
-          #lsp.package = pkgs.haskell-language-server;
-          treesitter.enable = true;
         };
       };
       clipboard = {
@@ -159,7 +140,8 @@
         yuck = {
           package = pkgs.vimPlugins.yuck-vim;
         };
-        vim-stylish-haskell = { # formatter, not syntax highlighter
+        vim-stylish-haskell = {
+          # formatter, not syntax highlighter
           package = pkgs.vimPlugins.vim-stylish-haskell;
         };
         haskell-vim = {
@@ -173,7 +155,7 @@
       lazy.plugins = {
         "typst.vim" = {
           package = pkgs.vimPlugins.typst-vim;
-          ft = ["typst"];
+          ft = [ "typst" ];
         };
         #"haskell-scope-highlighting.nvim" = {
         #package = pkgs.vimPlugins.haskell-scope-highlighting-nvim;

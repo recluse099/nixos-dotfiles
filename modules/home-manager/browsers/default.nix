@@ -1,3 +1,6 @@
 {
-  imports = [ ./floorp.nix ./firefox.nix ];
+  imports = [ 
+    #./floorp.nix 
+    ./firefox.nix 
+  ];
 }

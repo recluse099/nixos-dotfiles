@@ -1,0 +1,41 @@
+{ pkgs, ... }:
+{
+  languages = {
+    enableTreesitter = true;
+
+    nix = {
+      enable = true;
+      format.enable = true;
+      format.type = [ "nixfmt" ];
+      lsp.enable = true;
+      lsp.servers = [
+        "nixd"
+        "nil"
+      ];
+      treesitter.enable = true;
+    };
+
+    ts.enable = true;
+
+    lua = {
+      enable = false;
+      #format.enable = true;
+      #lsp.enable = true;
+      #treesitter.enable = true;
+    };
+
+    rust.enable = true;
+    rust.lsp.enable = true;
+
+    haskell = {
+      enable = true;
+      treesitter.enable = true;
+      lsp.enable = true;
+    };
+    clang = {
+      enable = true;
+      treesitter.enable = true;
+      lsp.enable = true;
+    };
+  };
+}

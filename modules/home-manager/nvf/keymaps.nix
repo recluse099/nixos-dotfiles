@@ -15,4 +15,9 @@
     mode = "n";
     action = ":x<CR>";
   }
+  {
+    key = "<leader>s";
+    mode = "n";
+    action = ":w<CR>";
+  }
 ]
