@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "final_space": true,
+  "version": 4,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "powerline",
+          "powerline_symbol": "X",
+          "foreground": "#FF0000",
+          "background": "#61AFEF",
+          "template": "text1"
+        },       
+
+        {
+          "type": "text",
+          "style": "powerline",
+          "powerline_symbol": "Y",
+          "foreground": "#ffffff",
+          "background": "#61AFEF",
+          "template": "text2"
+        }
+      ]
+    }
+  ]
+}

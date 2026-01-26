@@ -1,6 +1,6 @@
 {
   programs.starship = {
-    enable = true;
+    enable = false;
     enableNushellIntegration = true;
     enableFishIntegration = true;
     settings = builtins.fromTOML (builtins.readFile ./starship.toml);
