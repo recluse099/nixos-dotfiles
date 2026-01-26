@@ -7,7 +7,7 @@ in
 {
   home.packages = [ pkgs.libnotify ];
   services.dunst = {
-    enable = true;
+    enable = false;
     settings = {
       global = {
         font = ctp-mocha.font;
