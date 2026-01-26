@@ -14,7 +14,7 @@
       # ];
     };
     postgres = {
-      shell = lib.getExe pkgs.zsh;
+      shell = lib.getExe pkgs.nushell;
     };
   };
   nix.settings.trusted-users = [ "recluse" ];

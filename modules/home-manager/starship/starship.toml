@@ -2,7 +2,8 @@
 
 add_newline = false
 
-format = """
+# add a custom.bgfill\ after cmd_duration\ for ghostty
+format = """ 
 [](surface0)\
 $username\
 [](bg:lavender fg:surface0)\
@@ -26,7 +27,6 @@ $python\
 $nix_shell\
 [ ](fg:blue)\
 $cmd_duration\
-${custom.bgfill}\
 $line_break$character
 """
 

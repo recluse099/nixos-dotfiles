@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   xdg = {
     portal = {
       enable = true;
       config = {
         niri = {
-          default = [
+          default = lib.mkDefault [
             "wlr"
             "gtk"
             "gnome"
@@ -13,7 +13,7 @@
           "org.freedesktop.impl.portal.FileChooser" = "gtk";
         };
         common.default = [
-          "wlr"
+          #"wlr"
           "gtk"
           "gnome"
         ];

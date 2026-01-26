@@ -22,7 +22,7 @@
 
       # ---Other---
       "scroll_past_document_ends" = "0";
-      "add_newlines_when_copying_text" = "1";
+      "add_newlines_when_copying_text" = "0";
       "page_separator_width" = "7";
       "touchpad_sensitivity" = "1";
       "should_launch_new_window" = "1";

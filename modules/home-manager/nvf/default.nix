@@ -47,7 +47,7 @@
       };
       languages =
         let
-          language-module = import ./language-modules.nix;
+          language-module = import ./language-modules.nix {inherit pkgs;};
         in
         language-module.languages;
       globals = {

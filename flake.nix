@@ -11,9 +11,13 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.inputs.home-manager.follows = "home-manager";
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nvf, ... }: 
+  outputs = inputs @ { self, nixpkgs, home-manager, nvf, auto-cpufreq, ... }: 
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -32,6 +36,7 @@
           modules = [
             ./configuration.nix
             #nvf.nixosModules.default
+            auto-cpufreq.nixosModules.default
           ];
         };
       };

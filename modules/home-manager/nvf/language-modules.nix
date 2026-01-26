@@ -37,5 +37,21 @@
       treesitter.enable = true;
       lsp.enable = true;
     };
+    bash = {
+      enable = true;
+      treesitter.enable = true;
+      lsp.enable = true;
+    };
+    python = {
+      enable = true;
+      treesitter.enable = true;
+      lsp.enable = true;
+      lsp.servers = [ "basedpyright" ];
+    };
+    markdown = {
+      enable = true;
+      treesitter.enable = true;
+      lsp.enable = true;
+    };
   };
 }
