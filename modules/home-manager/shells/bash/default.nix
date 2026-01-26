@@ -10,8 +10,8 @@
       "nhhs" = "nh home switch /home/recluse/dotfiles";
       "nhos" = "nh os switch /home/recluse/dotfiles";
     };
-    initExtra = ''
-      eval "$(starship init bash)"
-    '';
+    #initExtra = ''
+    #  eval "$(starship init bash)"
+    #'';
   };
 }

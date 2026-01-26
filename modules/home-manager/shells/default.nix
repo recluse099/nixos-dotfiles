@@ -3,6 +3,6 @@
     ./nushell
     ./zsh
     ./bash
-    #./fish
+    ./fish
   ];
 }

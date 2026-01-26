@@ -93,13 +93,13 @@
       telescope.enable = true;
       autocomplete.blink-cmp.enable = true;
 
-      treesitter = {
+      /*treesitter = {
         enable = true;
         highlight.enable = true;
         indent.enable = true;
         addDefaultGrammars = true;
         highlight.disable = [ ];
-      };
+      };*/
 
       diagnostics = {
         enable = true;
