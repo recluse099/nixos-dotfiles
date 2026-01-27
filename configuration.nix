@@ -12,9 +12,14 @@
   services.xserver.enable = false;
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-  services.displayManager.gdm.wayland = true;
+  services.displayManager = {
+    dms-greeter = {
+      enable = true;
+      compositor.name = "niri";
+    };
+  };
+  # services.desktopManager.gnome.enable = true;
+  # services.displayManager.gdm.wayland = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {

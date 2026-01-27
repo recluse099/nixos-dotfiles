@@ -2,8 +2,9 @@
   # Swapfile
   swapDevices = [
     {
-      device = "/var/lib/swapfile";
-      size = 10216; # in MB(10GB)
+      device = "/swapfile";
+      size = 10 * 1024; # in MB(10GB)
     }
   ];
+  zramSwap.enable = true;
 }

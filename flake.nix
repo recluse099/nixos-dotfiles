@@ -15,6 +15,14 @@
       url = "github:AdnanHodzic/auto-cpufreq";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/quickshell/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, nvf, auto-cpufreq, ... }: 
@@ -32,7 +40,7 @@
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit self; };    #  <- pass self here
+          specialArgs = { inherit self; inherit inputs; };    #  <- pass self here
           modules = [
             ./configuration.nix
             #nvf.nixosModules.default
