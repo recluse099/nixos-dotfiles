@@ -47,7 +47,7 @@
       };
       languages =
         let
-          language-module = import ./language-modules.nix {inherit pkgs;};
+          language-module = import ./language-modules.nix { inherit pkgs; };
         in
         language-module.languages;
       globals = {
@@ -93,13 +93,15 @@
       telescope.enable = true;
       autocomplete.blink-cmp.enable = true;
 
-      /*treesitter = {
-        enable = true;
-        highlight.enable = true;
-        indent.enable = true;
-        addDefaultGrammars = true;
-        highlight.disable = [ ];
-      };*/
+      /*
+        treesitter = {
+          enable = true;
+          highlight.enable = true;
+          indent.enable = true;
+          addDefaultGrammars = true;
+          highlight.disable = [ ];
+        };
+      */
 
       diagnostics = {
         enable = true;
@@ -165,11 +167,6 @@
       extraPackages = with pkgs; [
         haskellPackages.hlint
       ];
-      luaConfigPost = ''
-        vim.keymap.set("n", "<leader>d", function()
-          vim.diagnostic.open_float(nil, { focus = false, border = "rounded" })
-        end, { desc = "Show diagnostics at cursor" })
-      '';
     };
   };
 }

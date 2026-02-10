@@ -13,7 +13,7 @@
           "org.freedesktop.impl.portal.FileChooser" = "gtk";
         };
         common.default = [
-          #"wlr"
+          "wlr"
           "gtk"
           "gnome"
         ];

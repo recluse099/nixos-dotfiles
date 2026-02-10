@@ -13,20 +13,12 @@
       "alignment": "left",
       "type": "prompt",
       "segments": [
-        {
-          "type": "os",
-          "style": "diamond",
-          "background": "p:blue",
-          "foreground": "p:white",
-          "leading_diamond": "\ue0b6",
-          "powerline_symbol": "\ue0b4",
-          "template": "{{ .Icon }} "
-        },
-        {
+         {
           "type": "session",
           "style": "diamond",
           "background": "p:blue",
           "foreground": "p:text",
+          "leading_diamond": "\ue0b6",
           "powerline_symbol": "\ue0b4",
           "template": "{{ .UserName }} "
         },
@@ -48,7 +40,9 @@
           "options": {
             "style": "agnoster_short",
             "home_icon": "~",
-            "folder_icon": "..\ue5fe.."
+            "folder_icon": "..",
+            "max_depth": 2,
+            "hide_root_location": true
           }
         },
         {
@@ -72,6 +66,14 @@
           }
         },
         {
+          "type": "nix-shell",
+          "style": "powerline",
+          "foreground": "p:text",
+          "background": "p:os",
+          "powerline_symbol": "",
+          "template": "{{ if ne .Type \"unknown\" }} nix-shell {{ end }}"
+        },
+        {
           "type": "executiontime",
           "style": "diamond",
           "trailing_diamond": "",
@@ -84,15 +86,6 @@
             "always_enabled": true
           }
         }
-        //{
-        // "type": "text",
-        //"style": "powerline",
-        //"background": "p:blue",
-        //"foreground": "p:lavender",
-        //"powerline_symbol": "",
-        //"trailing_diamond": "\ue0b4",
-        //"template": ""
-        //}
       ]
     },
     {

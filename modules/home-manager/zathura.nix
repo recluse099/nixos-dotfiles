@@ -13,7 +13,7 @@
     options = {
       selection-clipboard = "clipboard";
       selection-notification = false;
-      recolor = true;
+      recolor = false;
       recolor-keephue = true;
       recolor-reverse-video = true;
       # --- Core colors ---

@@ -28,7 +28,7 @@
       foreground = "#bac2de";
     };
     extraConfig = ''
-      font_family family="VictorMono Nerd Font Mono" style="Medium" 
+      font_family family="VictorMono Nerd Font Mono" style="Regular" 
     '';
   };    
 }

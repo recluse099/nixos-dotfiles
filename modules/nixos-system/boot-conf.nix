@@ -8,7 +8,7 @@
   boot.resumeDevice = "/dev/disk/by-uuid/87f2622a-b70d-471a-88fd-3c8b267fe4de";
   boot = {
     kernel.sysctl = {
-      "vm.swappiness" = 30;
+      "vm.swappiness" = 20;
     };
   };
 

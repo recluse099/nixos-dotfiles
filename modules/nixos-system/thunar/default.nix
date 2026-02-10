@@ -7,6 +7,9 @@
       thunar-vcs-plugin
       thunar-archive-plugin
       thunar-media-tags-plugin
+      thunar-dropbox-plugin
     ];
   };
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
 }

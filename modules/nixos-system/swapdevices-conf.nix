@@ -6,5 +6,8 @@
       size = 10 * 1024; # in MB(10GB)
     }
   ];
-  zramSwap.enable = true;
+  zramSwap = {
+    enable = true;
+    priority = 50;
+  };
 }

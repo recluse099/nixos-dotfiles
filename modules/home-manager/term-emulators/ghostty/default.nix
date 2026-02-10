@@ -16,6 +16,7 @@
         theme = "Catppuccin Mocha";
         cursor-style-blink = false;
         cursor-style = "bar";
+        adjust-cursor-thickness = 1;
         window-padding-y = "0";
         window-padding-balance = true;
         keybind = [

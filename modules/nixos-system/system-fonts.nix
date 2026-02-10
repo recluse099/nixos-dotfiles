@@ -10,5 +10,11 @@
     nerd-fonts.monaspace
     nerd-fonts.victor-mono
     fantasque-sans-mono
+    noto-fonts
+    noto-fonts-color-emoji
+    liberation_ttf
+    dejavu_fonts
+    cm_unicode
+    unicode-character-database
   ];
 }
