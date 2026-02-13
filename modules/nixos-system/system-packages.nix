@@ -3,6 +3,8 @@
     wget
     libreoffice
     python3
+    python313Packages.pynvim-pp # required dependency for cocktail
+    python313Packages.pynvim
     chromium
     ghc
     python312Packages.z3-solver
@@ -21,5 +23,6 @@
     blueberry
     haskell-language-server
     nodejs_24
+    nix-init
   ];
 }

@@ -1,9 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.nvf = {
     enableManpages = true;
     enable = true;
     settings.vim = {
+      withPython3 = true;
       tabline.nvimBufferline = {
         enable = true;
         setupOpts.options.always_show_bufferline = false;
@@ -37,12 +38,15 @@
             enable = true;
             filetypes = [ "lua" ];
           };
-          /*
-            "hls" = {
-              enable = true;
-              cmd = [ "haskell-language-server" ];
-            };
-          */
+          "coq-lsp" = {
+            enable = false;
+            filetypes = [ "v" ];
+          };
+          "tombi" = {
+            enable = true;
+            filetypes = [ "toml" ];
+          };
+
         };
       };
       languages =
@@ -138,18 +142,42 @@
 
       filetree.nvimTree.setupOpts.view.number = true;
       # Plugins
-      extraPlugins = {
-        yuck = {
-          package = pkgs.vimPlugins.yuck-vim;
+      extraPlugins =
+        let
+          coqtail = pkgs.vimUtils.buildVimPlugin {
+            name = "coqtail";
+            src = pkgs.fetchFromGitHub {
+              owner = "whonore";
+              repo = "Coqtail";
+              rev = "240c8f20700160edc13975d4a2bba70180a05ea8";
+              sha256 = "sha256-RqC1xBrVSjNL8xX8xaXeYIRjLObM+voVTryQ9lsNfBA=";
+            };
+          };
+        in
+        {
+          yuck = {
+            package = pkgs.vimPlugins.yuck-vim;
+          };
+          vim-stylish-haskell = {
+            # formatter, not syntax highlighter
+            package = pkgs.vimPlugins.vim-stylish-haskell;
+          };
+          haskell-vim = {
+            package = pkgs.vimPlugins.haskell-vim;
+          };
+          coqtail = {
+            package = coqtail;
+          };
+          /*
+            coq-lsp-nvim = {
+              package = pkgs.vimPlugins.coq-lsp-nvim;
+              #setup = ''
+              #  require('coq-lsp').setup {}
+              #'';
+            };
+          */
+
         };
-        vim-stylish-haskell = {
-          # formatter, not syntax highlighter
-          package = pkgs.vimPlugins.vim-stylish-haskell;
-        };
-        haskell-vim = {
-          package = pkgs.vimPlugins.haskell-vim;
-        };
-      };
 
       debugger.nvim-dap.enable = true;
 
@@ -159,6 +187,7 @@
           package = pkgs.vimPlugins.typst-vim;
           ft = [ "typst" ];
         };
+
         #"haskell-scope-highlighting.nvim" = {
         #package = pkgs.vimPlugins.haskell-scope-highlighting-nvim;
         #ft = [ "haskell" ];
@@ -166,7 +195,11 @@
       };
       extraPackages = with pkgs; [
         haskellPackages.hlint
+        tombi
       ];
+      /*luaConfigPre = ''
+        vim.g["coqtail#supported"] = 1
+      '';*/
     };
   };
 }
