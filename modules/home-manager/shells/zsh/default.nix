@@ -21,8 +21,8 @@
       "nhhs" = "nh home switch /home/recluse/dotfiles";
       "nhos" = "nh os switch /home/recluse/dotfiles";
     };
-    #initContent = lib.mkOrder 500 ''
-    #  eval "$(starship init zsh)"
-    #'';
+    initContent = lib.mkOrder 500 ''
+      eval "$(direnv hook zsh)"
+    '';
   };
 }

@@ -6,6 +6,13 @@
     action = "<nop>";
   }
   {
+    key = "<leader>";
+    mode = "i";
+    silent = true;
+    action = " ";
+  }
+
+  {
     key = "<leader>q";
     mode = "n";
     action = ":q!<CR>";

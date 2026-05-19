@@ -1,6 +1,6 @@
 {
   imports = [ 
     #./floorp.nix 
-    ./firefox.nix 
+    #./firefox.nix 
   ];
 }

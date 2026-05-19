@@ -20,7 +20,8 @@
     radeontop
     brightnessctl
     matugen
-    blueberry
+    # bluetooth tools
+    bluez
     haskell-language-server
     nodejs_24
     nix-init

@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   programs.thunar = {
     enable = true;
@@ -10,6 +10,7 @@
       thunar-dropbox-plugin
     ];
   };
+  environment.systemPackages = with pkgs; [ file-roller ];
   services.gvfs.enable = true;
   services.tumbler.enable = true;
 }

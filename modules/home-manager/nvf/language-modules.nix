@@ -52,10 +52,21 @@
       enable = true;
       treesitter.enable = true;
       lsp.enable = true;
+      lsp.servers = [ "markdown-oxide" "marksman" ];
+      format.enable = true;
+      format.type = [ "deno_fmt" ];
+      extensions = {
+        render-markdown-nvim.enable = true;
+      };
     };
     json = {
       enable = true;
       treesitter.enable = true;
+      lsp.enable = true;
+    };
+    tex = {
+      enable = true;
+      treesitter.enable = false;
       lsp.enable = true;
     };
   };

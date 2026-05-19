@@ -1,4 +1,5 @@
-{pkgs, lib, ...}: {
+{ pkgs, lib, ... }:
+{
   programs = {
     ghostty = {
       enable = true;
@@ -6,7 +7,7 @@
         gtk-single-instance = true;
         font-family = "VictorMono Nerd Font";
         font-size = 18;
-        freetype-load-flags = ["hinting"];
+        freetype-load-flags = [ "hinting" ];
         background-opacity = 1;
         window-decoration = "auto";
         shell-integration = "detect";
@@ -19,6 +20,7 @@
         adjust-cursor-thickness = 1;
         window-padding-y = "0";
         window-padding-balance = true;
+        unfocused-split-opacity = 0.9;
         keybind = [
           "ctrl+alt+h=goto_split:left"
           "ctrl+alt+l=goto_split:right"

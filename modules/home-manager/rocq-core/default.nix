@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    rocq-core_9_1
-    coq_9_1
+    rocq-core
+    coq
     coqPackages.coq-lsp
     coqPackages.stdlib
     coqPackages.stdpp

@@ -5,6 +5,7 @@
     enable = true;
     settings.vim = {
       withPython3 = true;
+      python3Packages = [ "pynvim" ];
       tabline.nvimBufferline = {
         enable = true;
         setupOpts.options.always_show_bufferline = false;
@@ -64,6 +65,9 @@
         haskell_backpack = 1; # enable highlighting of backpack keywords
         #typst-vim settings
         #typst_pdf_viewer = "zathura";
+        coqtail_build_system = "coqproject";
+        coqtail_dune_compile_deps = 1;
+        coqtail_noimap = 1;
       };
       enableLuaLoader = true;
       statusline.lualine = {
@@ -97,15 +101,12 @@
       telescope.enable = true;
       autocomplete.blink-cmp.enable = true;
 
-      /*
-        treesitter = {
-          enable = true;
-          highlight.enable = true;
-          indent.enable = true;
-          addDefaultGrammars = true;
-          highlight.disable = [ ];
-        };
-      */
+      treesitter = {
+        enable = true;
+        highlight.enable = true;
+        indent.enable = false;
+        addDefaultGrammars = true;
+      };
 
       diagnostics = {
         enable = true;
@@ -120,7 +121,7 @@
           wl-copy.enable = true;
           wl-copy.package = pkgs.wl-clipboard-rs;
         };
-        registers = "unnamed,unnamedplus";
+        registers = "unnamedplus";
       };
       options = {
         autoindent = false;
@@ -176,7 +177,10 @@
               #'';
             };
           */
-
+          vimtex = {
+            package = pkgs.vimPlugins.vimtex;
+            #ft = [ "tex" ];
+          };
         };
 
       debugger.nvim-dap.enable = true;
@@ -187,19 +191,23 @@
           package = pkgs.vimPlugins.typst-vim;
           ft = [ "typst" ];
         };
-
-        #"haskell-scope-highlighting.nvim" = {
-        #package = pkgs.vimPlugins.haskell-scope-highlighting-nvim;
-        #ft = [ "haskell" ];
-        #};
+        "knap" = {
+          package = pkgs.vimPlugins.knap;
+          ft = [ "tex" ];
+        };
+        /*
+          "vimtex" = {
+          package = pkgs.vimPlugins.vimtex;
+          ft = [ "tex" ];
+          };
+        */
       };
       extraPackages = with pkgs; [
         haskellPackages.hlint
         tombi
+        coqPackages.stdlib
+        coqPackages.coq-lsp
       ];
-      /*luaConfigPre = ''
-        vim.g["coqtail#supported"] = 1
-      '';*/
     };
   };
 }

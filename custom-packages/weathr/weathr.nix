@@ -11,11 +11,12 @@ rustPlatform.buildRustPackage (finalAttrs: {
   src = fetchFromGitHub {
     owner = "Veirt";
     repo = "weathr";
-    tag = "v${finalAttrs.version}";
-    hash = "sha256-HZhrR3TzVLtkEGkvlKXmMVsZDu5iJ3GQOQyHL1pE7lc=";
+    # tag = "v${finalAttrs.version}";
+    rev = "085b67c222c3a3a88e0ab42751205a3fc2372621";
+    hash =    "sha256-fsA0zMLfPwvc4UtkiU7pu/eLQbsOoY6Kexd/AiW7wx8=";
   };
   doCheck = false;
-  cargoHash = "sha256-Yn333vSD1GmLpqvtzrSJliZmtEyaDw5HmCdqnxGw3MI=";
+  cargoHash = "sha256-H9Uibni+f4GQ1wq3NEk9trytkMhfP2z2mw3LpX8ss4A=";
 
   meta = {
     description = "A terminal weather app with ascii animation";
