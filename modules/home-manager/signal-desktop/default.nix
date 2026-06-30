@@ -1,6 +1,5 @@
-{inputs, ...}: let
-  system = "x86_64-linux";
-  pkgs-new = inputs.nixpkgs-quick-update.legacyPackages.${system};
+{inputs, pkgs, ...}: let
+  pkgs-new = inputs.nixpkgs-quick-update.legacyPackages.${pkgs.system};
 in {
   home.packages = with pkgs-new; [
     signal-desktop

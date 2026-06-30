@@ -15,7 +15,7 @@
       treesitter.enable = true;
     };
 
-    ts.enable = true;
+    typescript.enable = true;
 
     lua = {
       enable = false;

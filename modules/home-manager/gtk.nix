@@ -15,6 +15,7 @@
       };
       name = "catppuccin-mocha-blue-standard";
     };
+    gtk4.theme = null;
     #cursorTheme = {
     #  name = "catppuccin-mocha-dark-cursors";
     #  package = pkgs.catppuccin-cursors.mochaDark;

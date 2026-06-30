@@ -104,7 +104,7 @@
       treesitter = {
         enable = true;
         highlight.enable = true;
-        indent.enable = false;
+        indent.enable = true;
         addDefaultGrammars = true;
       };
 

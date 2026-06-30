@@ -32,7 +32,9 @@
       "show_doc_path" = "1";
       "prerender_next_page_presentation" = "1";
       "case_sensitive_search" = "0";
-      "startup_commands" = "toggle_custom_color;toggle_scrollbar";
+      "startup_commands" = [ "toggle_custom_color"
+                              "toggle_scrollbar"
+                           ];
     };
   };
 }

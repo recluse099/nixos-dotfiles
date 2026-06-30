@@ -4,6 +4,7 @@
 
   programs.yazi = {
     enable = true;
+    shellWrapperName = "yy";
     enableNushellIntegration = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
