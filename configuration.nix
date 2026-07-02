@@ -14,7 +14,7 @@
   # Enable the GNOME Desktop Environment.
   services.displayManager = {
     dms-greeter = {
-      enable = true;
+      enable = false;
       compositor.name = "niri";
     };
   };

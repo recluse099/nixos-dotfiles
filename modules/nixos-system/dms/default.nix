@@ -5,9 +5,9 @@ let
 in
 {
   programs.dms-shell = {
-    enable = true;
+    enable = false;
     package = dms;
-    systemd.enable = true;
+    systemd.enable = false;
     enableSystemMonitoring = true;
     quickshell.package = quickshell-pkg;
   };

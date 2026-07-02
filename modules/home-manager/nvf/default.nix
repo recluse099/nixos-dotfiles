@@ -207,6 +207,7 @@
         tombi
         coqPackages.stdlib
         coqPackages.coq-lsp
+        ocamlformat
       ];
     };
   };

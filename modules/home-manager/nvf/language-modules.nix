@@ -32,6 +32,11 @@
       treesitter.enable = true;
       lsp.enable = true;
     };
+    ocaml = {
+      enable = true;
+      treesitter.enable = true;
+      lsp.enable = true;
+    };
     clang = {
       enable = true;
       treesitter.enable = true;

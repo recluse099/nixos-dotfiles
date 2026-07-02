@@ -23,24 +23,46 @@
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia/legacy-v4";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nvf, auto-cpufreq, ... }: 
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      nvf,
+      auto-cpufreq,
+      ...
+    }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       lib = nixpkgs.lib;
-    in {
-      /*packages.${system}.default =
+    in
+    {
+      /*
+        packages.${system}.default =
         (nvf.lib.neovimConfiguration {
           inherit pkgs;
           modules = [ ./nvf-configuration.nix ];
-        }).neovim;*/
+        }).neovim;
+      */
 
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit self; inherit inputs; };    #  <- pass self here
+          specialArgs = {
+            inherit self;
+            inherit inputs;
+          }; # <- pass self here
           modules = [
             ./configuration.nix
             #nvf.nixosModules.default
@@ -50,12 +72,14 @@
       };
       homeConfigurations.recluse = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ 
-          nvf.homeManagerModules.default  
+        modules = [
+          nvf.homeManagerModules.default
           ./home.nix
         ];
-        extraSpecialArgs = { inherit self; inherit inputs; }; 
+        extraSpecialArgs = {
+          inherit self;
+          inherit inputs;
+        };
       };
     };
 }
-
