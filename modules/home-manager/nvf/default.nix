@@ -12,6 +12,7 @@
       };
       utility = import ./utilities.nix;
       keymaps = import ./keymaps.nix;
+      assistant = (import ./assistants.nix).assistant;
       theme = {
         enable = true;
         name = "catppuccin"; # onedark
@@ -47,7 +48,7 @@
             enable = true;
             filetypes = [ "toml" ];
           };
-
+          nixd.autoArchive = true;
         };
       };
       languages =
@@ -180,6 +181,10 @@
           vimtex = {
             package = pkgs.vimPlugins.vimtex;
             #ft = [ "tex" ];
+          };
+          claudecode-nvim = {
+            package = pkgs.vimPlugins.claudecode-nvim;
+            setup = ''require("claudecode").setup({})'';
           };
         };
 
