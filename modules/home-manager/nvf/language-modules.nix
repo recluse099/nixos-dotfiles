@@ -36,6 +36,7 @@
       enable = true;
       treesitter.enable = true;
       lsp.enable = true;
+      format.enable = true;
     };
     clang = {
       enable = true;
@@ -59,7 +60,7 @@
       lsp.enable = true;
       lsp.servers = [ "markdown-oxide" "marksman" ];
       format.enable = true;
-      format.type = [ "deno_fmt" ];
+      format.type = [ "deno" ];
       extensions = {
         render-markdown-nvim.enable = true;
       };

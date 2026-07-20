@@ -27,7 +27,7 @@
       };
       open.append_rules = [
         {
-          name = "*.svg";
+          url = "*.svg";
           use = [ "edit" ];
         }
       ];
@@ -288,11 +288,11 @@
           fg = "#a6e3a1";
         }
         {
-          name = "*";
+          url = "*";
           fg = "#cdd6f4";
         }
         {
-          name = "*/";
+          url = "*/";
           fg = "#89b4fa";
         }
       ];
