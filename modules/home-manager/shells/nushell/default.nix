@@ -8,8 +8,8 @@
         "yz" = "yazi";
         "ga" = "git add";
         "clr" = "clear";
-        "nhhs" = "nh home switch /home/recluse/dotfiles";
-        "nhos" = "nh os switch /home/recluse/dotfiles";
+        "nhhs" = "nh home switch";
+        "nhos" = "nh os switch";
         "la" = "eza";
       };
       plugins = with pkgs.nushellPlugins; [

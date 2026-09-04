@@ -7,8 +7,8 @@
       "ze" = "zellij";
       "ga" = "git add";
       "clr" = "clear";
-      "nhhs" = "nh home switch /home/recluse/dotfiles";
-      "nhos" = "nh os switch /home/recluse/dotfiles";
+      "nhhs" = "nh home switch";
+      "nhos" = "nh os switch";
     };
     #initExtra = ''
     #  eval "$(starship init bash)"
