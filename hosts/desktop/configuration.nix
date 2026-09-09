@@ -19,7 +19,6 @@
     ./hardware-configuration.nix
 
     ../../modules/nixos-system/minimal
-    ../../modules/nixos-system/extra/claude-code
   ];
 
   networking.hostName = "work-desktop";
@@ -59,4 +58,5 @@
     # This flake lives in hosts/, not the repo root - keep nh pointed at it.
     flake = "/home/recluse/dotfiles/hosts";
   };
+  system.stateVersion = "26.05";
 }

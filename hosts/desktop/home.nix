@@ -1,8 +1,8 @@
 # Minimal home-manager config for the office desktop: just
-# modules/home-manager/minimal (nvf, noctalia-shell, zsh, librewolf, kitty,
-# ghostty, git, plus cursor/gtk/qt/kvantum theming baseline). Nothing from
-# modules/home-manager/extra (the laptop's big app list - texlive,
-# thunderbird, discord, etc.).
+# modules/home-manager/minimal (nvf, noctalia-shell, zsh, oh-my-posh,
+# librewolf, kitty, ghostty, git, plus cursor/gtk/qt/kvantum theming
+# baseline). Nothing from modules/home-manager/extra (the laptop's big app
+# list - texlive, thunderbird, discord, etc.).
 {
   pkgs,
   inputs,

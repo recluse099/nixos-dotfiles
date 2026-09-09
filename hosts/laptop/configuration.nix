@@ -31,4 +31,5 @@
     layout = "us";
     variant = "";
   };
+  system.stateVersion = "25.11";
 }

@@ -4,9 +4,7 @@
     "bar": {
       "barType": "simple",
       "position": "top",
-      "monitors": [
-        "eDP-1"
-      ],
+      "monitors": [],
       "density": "default",
       "showOutline": true,
       "showCapsule": true,
