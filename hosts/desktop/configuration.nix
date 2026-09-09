@@ -19,6 +19,7 @@
     ./hardware-configuration.nix
 
     ../../modules/nixos-system/minimal
+    ../../modules/nixos-system/extra/claude-code
   ];
 
   networking.hostName = "work-desktop";
