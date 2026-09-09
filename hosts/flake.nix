@@ -1,8 +1,9 @@
 {
-  description = "Multi-host flake (laptop + work-desktop), built on top of the shared modules/ tree from the root flake";
+  description = "Multi-host flake (laptop + work-desktop), built on top of the shared ../modules/ tree";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-quick-update.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
@@ -43,24 +44,41 @@
     }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
       lib = nixpkgs.lib;
+
+      # texliveMedium (and anything else pulling in TeX Live's "asymptote")
+      # needs asymptote's xasy GUI, which needs PyQt5, which is currently
+      # broken to build against python3.14 on this nixpkgs revision.
+      # Excluding asymptote here fixes it everywhere that reads
+      # pkgs.texliveMedium - including modules/home-manager/extra/texlive and
+      # zettlr's own internal PDF-export dependency, which hardcodes
+      # pkgs.texliveMedium and can't be reached any other way.
+      # Revert once upstream fixes PyQt5/python3.14.
+      pkgs = (nixpkgs.legacyPackages.${system}).extend (
+        final: prev: {
+          texliveMedium = prev.texlive.combine {
+            inherit (prev.texlive) scheme-medium;
+            pkgFilter =
+              pkg:
+              (pkg.tlType == "run" || pkg.tlType == "bin" || pkg.pname == "core" || pkg.hasManpages or false)
+              && pkg.pname != "asymptote";
+          };
+        }
+      );
     in
     {
       nixosConfigurations = {
-        # Laptop: identical to the root flake's "nixos" config, just re-keyed to its
-        # real hostname. Reuses ../configuration.nix (and therefore the whole
-        # modules/nixos-system tree) verbatim so edits to the shared modules stay
-        # in sync with the root flake automatically.
+        # Laptop and work-desktop are symmetric siblings here: each has its own
+        # configuration.nix/home.nix under hosts/<name>/, both drawing only from
+        # the shared ../modules/ tree - neither host's config references the other's.
         laptop = lib.nixosSystem {
           inherit system;
           specialArgs = {
             inherit self inputs;
           };
           modules = [
-            ../configuration.nix
+            ./laptop/configuration.nix
             auto-cpufreq.nixosModules.default
-            ./laptop/hostname-override.nix
           ];
         };
 
@@ -81,12 +99,18 @@
           inherit pkgs;
           modules = [
             nvf.homeManagerModules.default
-            ../home.nix
+            ./laptop/home.nix
           ];
           extraSpecialArgs = {
             inherit self inputs;
           };
         };
+
+        # Fallback for `nh home switch`'s auto-detect, which tries
+        # `recluse@$(hostname)` first and then plain `recluse`. Needed until
+        # the laptop actually switches over and its hostname becomes
+        # "laptop" (matching the entry above directly).
+        recluse = self.homeConfigurations."recluse@laptop";
 
         "recluse@work-desktop" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;

@@ -1,8 +1,7 @@
 # Minimal NixOS config for the office desktop (Intel Core i7-14700, 32GB RAM,
-# integrated graphics). Hand-picked imports from the shared modules/nixos-system
-# tree instead of the laptop's import-everything default.nix, since most of the
-# laptop's modules are laptop-specific (hibernation, lid switch, USB wakeup
-# tuning, waydroid, postgres, ...) or just extra apps not wanted here.
+# integrated graphics). Imports modules/nixos-system/minimal only - everything
+# in modules/nixos-system/extra is laptop-only (hibernation/resume/USB-wakeup
+# tuning, waydroid, postgres, the big app list, ...) and never reaches here.
 {
   config,
   pkgs,
@@ -19,27 +18,7 @@
     # and the real disk/filesystem UUIDs - none of that is hand-written here.
     ./hardware-configuration.nix
 
-    # --- baseline plumbing niri/noctalia need to actually work as a desktop ---
-    ../../modules/nixos-system/allow-unfree-pkgs.nix
-    ../../modules/nixos-system/experimental-features.nix
-    ../../modules/nixos-system/audio-services.nix
-    ../../modules/nixos-system/bluetooth/default.nix
-    ../../modules/nixos-system/hardware-graphics-conf.nix
-    ../../modules/nixos-system/portals-conf.nix
-    ../../modules/nixos-system/printing/default.nix
-    ../../modules/nixos-system/system-fonts.nix
-    ../../modules/nixos-system/direnv/default.nix # needed: zsh module below runs `direnv hook zsh`
-
-    # --- personal defaults carried over (not hardware-specific) ---
-    ../../modules/nixos-system/locale-conf.nix
-    ../../modules/nixos-system/timezone-conf.nix
-    ../../modules/nixos-system/env-vars-conf.nix
-    ../../modules/nixos-system/xdg-terminal-default.nix
-    ../../modules/nixos-system/stateVersion.nix
-
-    # --- what you actually asked for ---
-    ../../modules/nixos-system/niri.nix
-    ../../modules/nixos-system/noctalia-greeter/default.nix
+    ../../modules/nixos-system/minimal
   ];
 
   networking.hostName = "work-desktop";
