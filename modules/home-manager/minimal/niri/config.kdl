@@ -362,6 +362,12 @@ binds {
   //core system actions
   // Lock(using swaylock)
   Mod+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+
+  // Fullscreen-mirror the laptop panel onto the HDMI projector. niri has no
+  // native output-mirroring, so this spawns wl-mirror instead (whole-output
+  // capture, not tied to window focus).
+  Mod+P hotkey-overlay-title="Project to Projector (HDMI-A-1)" { spawn "wl-mirror" "--fullscreen-output" "HDMI-A-1" "eDP-1"; }
+  Mod+Shift+P hotkey-overlay-title="Stop Projecting" { spawn-sh "pkill wl-mirror"; }
   // Quit niri
   Mod+Shift+E    { quit; }
   Ctrl+Alt+Delete { quit; }
