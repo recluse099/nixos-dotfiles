@@ -1,7 +1,7 @@
 // Top level actions
 spawn-at-startup "noctalia-shell"
 spawn-at-startup "wpaperd"
-spawn-at-startup "swaybg" "-i" "/home/recluse/wallpapers/wukong-vs-heaven.jpg";
+spawn-at-startup "swaybg" "-i" "@wukongWallpaper@";
 prefer-no-csd // Niri will draw focus ring and border around windows that agree to omit their client-side decorations.
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -220,7 +220,7 @@ binds {
 
   // --Application launchers-- 
   Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-  Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+  Mod+D hotkey-overlay-title="Run an Application: noctalia launcher" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
   Mod+G hotkey-overlay-title="Open terminal: ghostty" { spawn "ghostty"; }
   XF86MonBrightnessDown { spawn-sh "brightnessctl set 4%-"; }
   XF86MonBrightnessUp { spawn-sh "brightnessctl set 4%+"; }
