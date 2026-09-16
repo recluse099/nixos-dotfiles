@@ -19,9 +19,10 @@
     ./hardware-configuration.nix
 
     ../../modules/nixos-system/minimal
+    ../../modules/nixos-system/extra/openssh
   ];
 
-  networking.hostName = "work-desktop";
+  networking.hostName = "grace";
   networking.networkmanager.enable = true;
   environment.systemPackages = with pkgs; [ networkmanagerapplet ];
 
@@ -34,15 +35,30 @@
 
   services.xserver.enable = false;
 
-  users.users.recluse = {
-    isNormalUser = true;
-    description = "recluse";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "video"
-    ];
-    shell = lib.getExe pkgs.zsh;
+  # Users
+  users.users = {
+    recluse = {
+      isNormalUser = true;
+      description = "recluse";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "video"
+      ];
+      shell = lib.getExe pkgs.zsh;
+      openssh.authorizedKeys.keys = [
+        # Paste the laptop's public key (~/.ssh/id_ed25519.pub) here, e.g.:
+        # "ssh-ed25519 AAAA... recluse@laptop"
+      ];
+    };
+    fpl = {
+      isNormalUser = true;
+      description = "fpl admin";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
+    };
   };
   nix.settings.trusted-users = [ "recluse" ];
 

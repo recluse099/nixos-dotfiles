@@ -6,7 +6,7 @@
       show-failed-attempts = true;
       daemonize = true;
 
-      image = "/home/recluse/dotfiles/modules/home-manager/extra/wpaperd/wallpapers/dark-anime-aesthetic-desktop-wallpaper-1.jpg";
+      image = "/home/recluse/dotfiles/modules/home-manager/minimal/wpaperd/wallpapers/dark-anime-aesthetic-desktop-wallpaper-1.jpg";
       scaling = "fill";
 
       indicator-idle-visible = false;

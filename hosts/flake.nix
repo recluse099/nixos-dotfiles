@@ -1,5 +1,5 @@
 {
-  description = "Multi-host flake (laptop + work-desktop), built on top of the shared ../modules/ tree";
+  description = "Multi-host flake (laptop + grace), built on top of the shared ../modules/ tree";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -68,7 +68,7 @@
     in
     {
       nixosConfigurations = {
-        # Laptop and work-desktop are symmetric siblings here: each has its own
+        # Laptop and grace are symmetric siblings here: each has its own
         # configuration.nix/home.nix under hosts/<name>/, both drawing only from
         # the shared ../modules/ tree - neither host's config references the other's.
         laptop = lib.nixosSystem {
@@ -83,7 +83,7 @@
         };
 
         # Desktop: minimal, hand-picked module set. See hosts/desktop/configuration.nix.
-        work-desktop = lib.nixosSystem {
+        grace = lib.nixosSystem {
           inherit system;
           specialArgs = {
             inherit self inputs;
@@ -112,7 +112,7 @@
         # "laptop" (matching the entry above directly).
         recluse = self.homeConfigurations."recluse@laptop";
 
-        "recluse@work-desktop" = home-manager.lib.homeManagerConfiguration {
+        "recluse@grace" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
             nvf.homeManagerModules.default
