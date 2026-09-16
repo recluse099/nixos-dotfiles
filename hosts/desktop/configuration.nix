@@ -47,8 +47,7 @@
       ];
       shell = lib.getExe pkgs.zsh;
       openssh.authorizedKeys.keys = [
-        # Paste the laptop's public key (~/.ssh/id_ed25519.pub) here, e.g.:
-        # "ssh-ed25519 AAAA... recluse@laptop"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGmxa0L5BaIM6lxSEtf1dmn18NOyVhOs1ZRBl/fpeA3s recluse@grace-access"
       ];
     };
     fpl = {
