@@ -2,11 +2,24 @@
 {
   programs.ssh = {
     enable = true;
-    matchBlocks = {
+    enableDefaultConfig = false;
+    settings = {
+      "*" = {
+        ForwardAgent = false;
+        AddKeysToAgent = "no";
+        Compression = false;
+        ServerAliveInterval = 0;
+        ServerAliveCountMax = 3;
+        HashKnownHosts = false;
+        UserKnownHostsFile = "~/.ssh/known_hosts";
+        ControlMaster = "no";
+        ControlPath = "~/.ssh/master-%r@%n:%p";
+        ControlPersist = "no";
+      };
       grace = {
-        hostname = "grace.tail178f29.ts.net";
-        user = "recluse";
-        identityFile = "~/.ssh/id_ed25519_grace";
+        HostName = "grace.tail178f29.ts.net";
+        User = "recluse";
+        IdentityFile = "~/.ssh/id_ed25519_grace";
       };
     };
   };
