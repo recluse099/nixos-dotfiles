@@ -20,7 +20,7 @@
           "foreground": "p:text",
           "leading_diamond": "\ue0b6",
           "powerline_symbol": "\ue0b4",
-          "template": "{{ .UserName }} "
+          "template": "{{ .UserName }}@{{ .HostName }}"
         },
         {
           "type": "shell",
