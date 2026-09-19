@@ -20,6 +20,7 @@
 
     ../../modules/nixos-system/minimal
     ../../modules/nixos-system/extra/openssh
+    ./sunshine.nix
   ];
 
   networking.hostName = "grace";
