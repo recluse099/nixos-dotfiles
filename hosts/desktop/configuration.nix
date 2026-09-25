@@ -71,8 +71,7 @@
       dates = "weekly";
       extraArgs = "--keep 10";
     };
-    # This flake lives in hosts/, not the repo root - keep nh pointed at it.
-    flake = "/home/recluse/dotfiles/hosts";
+    flake = "/home/recluse/dotfiles";
   };
   system.stateVersion = "26.05";
 }

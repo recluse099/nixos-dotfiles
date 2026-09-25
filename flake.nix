@@ -1,5 +1,5 @@
 {
-  description = "Multi-host flake (laptop + grace), built on top of the shared ../modules/ tree";
+  description = "Multi-host flake (laptop + grace), built on top of the shared ./modules/ tree";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -70,14 +70,14 @@
       nixosConfigurations = {
         # Laptop and grace are symmetric siblings here: each has its own
         # configuration.nix/home.nix under hosts/<name>/, both drawing only from
-        # the shared ../modules/ tree - neither host's config references the other's.
+        # the shared ./modules/ tree - neither host's config references the other's.
         laptop = lib.nixosSystem {
           inherit system;
           specialArgs = {
             inherit self inputs;
           };
           modules = [
-            ./laptop/configuration.nix
+            ./hosts/laptop/configuration.nix
             auto-cpufreq.nixosModules.default
           ];
         };
@@ -89,7 +89,7 @@
             inherit self inputs;
           };
           modules = [
-            ./desktop/configuration.nix
+            ./hosts/desktop/configuration.nix
           ];
         };
       };
@@ -99,7 +99,7 @@
           inherit pkgs;
           modules = [
             nvf.homeManagerModules.default
-            ./laptop/home.nix
+            ./hosts/laptop/home.nix
           ];
           extraSpecialArgs = {
             inherit self inputs;
@@ -116,11 +116,17 @@
           inherit pkgs;
           modules = [
             nvf.homeManagerModules.default
-            ./desktop/home.nix
+            ./hosts/desktop/home.nix
           ];
           extraSpecialArgs = {
             inherit self inputs;
           };
+        };
+      };
+      templates = {
+        lean = {
+          path = ./templates/lean;
+          description = "Lean 4 project with elan devShell + direnv";
         };
       };
     };

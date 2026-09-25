@@ -6,7 +6,7 @@
       dates = "weekly";
       extraArgs = "--keep 10";
     };
-    flake = "/home/recluse/dotfiles/hosts";
+    flake = "/home/recluse/dotfiles";
   };
 }
 
