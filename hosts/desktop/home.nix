@@ -17,6 +17,9 @@
 
   imports = [ ../../modules/home-manager/minimal ];
 
+  # Bigger screen, bigger font - overrides the shared module's default of 18.
+  programs.ghostty.settings.font-size = 22;
+
   home.sessionVariables = {
     TERMINAL = lib.getExe pkgs.ghostty;
     SHELL = lib.getExe pkgs.zsh;
