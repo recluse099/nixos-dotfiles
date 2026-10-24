@@ -1,23 +1,25 @@
 {
-  # Swapfile - kept at a higher priority than zram so it's used first. This
-  # is inverted from the usual "zram first" setup on purpose: hibernation
-  # needs to write the whole memory image to disk-backed swap, and zram
-  # (RAM-backed) can't hold it. Filling the disk swapfile first keeps zram's
-  # footprint small, so it stays small enough to reliably swapoff/reclaim at
-  # hibernate time (see zram-hibernate-fix). Preferring zram first, as
-  # before, works great for day-to-day performance but reliably breaks
-  # hibernation once zram fills to its default ~50% of RAM.
+  # zram kept at a higher priority than the disk swapfile so it's used
+  # first: it's RAM-backed and compressed, so swapping to it is cheap and
+  # fast, unlike the disk swapfile which is I/O-bound and can make the
+  # system grind to a halt under memory pressure (12GB RAM -> 16GB RAM
+  # upgrade, Oct 2026 freeze postmortem). This is safe for hibernation
+  # because memoryPercent is capped low (see zramSwap below): zram's actual
+  # size stays small enough that the pre-hibernate `swapoff /dev/zram0` (see
+  # zram-hibernate-fix) can always evacuate it back into free RAM
+  # reliably - the capped size, not the priority order, is what keeps that
+  # swapoff safe.
   swapDevices = [
     {
       device = "/swapfile";
-      size = 10 * 1024; # in MB(10GB)
-      options = [ "pri=10" ];
+      size = 20 * 1024; # in MB(20GB) - RAM (16GB) + margin, needed to hold the full hibernation image
+      options = [ "pri=5" ];
     }
   ];
   zramSwap = {
     enable = true;
-    memoryPercent = 15;
-    priority = 5;
+    memoryPercent = 25;
+    priority = 10;
   };
   systemd.tmpfiles.rules = [
     "w /sys/power/image_size - - - - 0"
