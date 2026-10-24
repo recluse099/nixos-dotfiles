@@ -3,7 +3,7 @@
   imports = [ inputs.noctalia.homeModules.default ];
 
   programs.noctalia-shell = {
-    enable = true;
+    enable = false;
     settings = (builtins.fromJSON (builtins.readFile ./noctalia.json)).settings;
   };
 }

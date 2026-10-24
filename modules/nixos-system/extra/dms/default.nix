@@ -5,7 +5,7 @@ let
 in
 {
   programs.dms-shell = {
-    enable = false;
+    enable = true;
     package = dms;
     systemd.enable = false;
     enableSystemMonitoring = true;
