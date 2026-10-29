@@ -13,17 +13,16 @@
 # GUI changes need re-syncing) -> run sync-dms-settings.sh -> flip/keep
 # enable = true -> home-manager switch.
 #
-# `enable` is flipped to true below, but settings.json is still the {}
-# placeholder - DO NOT run `home-manager switch` until sync-dms-settings.sh
-# has populated settings.json with real, GUI-configured content (after
-# logging into the DMS session and customizing it). Switching with the
-# placeholder still in place will symlink settings.json to {} and lock DMS's
-# GUI out of writing its own settings.
+# Disabled 2026-10-29: switched the desktop shell back to Noctalia (see
+# ../nocatlia-shell). settings.json below is kept up to date (last synced via
+# sync-dms-settings.sh) so switching DMS back on later is just flipping this
+# back to true and rebuilding - no need to redo the GUI configuration from
+# scratch.
 { inputs, ... }:
 {
   imports = [ inputs.dms.homeModules.default ];
   programs.dank-material-shell = {
-    enable = true;
+    enable = false;
     systemd.enable = false;
     settings = builtins.fromJSON (builtins.readFile ./settings.json);
   };

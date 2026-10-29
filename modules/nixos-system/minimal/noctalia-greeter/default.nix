@@ -4,7 +4,7 @@
     inputs.noctalia-greeter.nixosModules.default
   ];
   programs.noctalia-greeter = {
-    enable = false;
+    enable = true;
     package = inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
     # Optional configuration

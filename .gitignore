@@ -1,2 +1,4 @@
 result
 result-*
+hardware-configuration.nix
+.direnv/

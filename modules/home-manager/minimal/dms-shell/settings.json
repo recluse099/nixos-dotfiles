@@ -95,7 +95,11 @@
       "leftWidgets": [
         "launcherButton",
         "workspaceSwitcher",
-        "focusedWindow"
+        "focusedWindow",
+        {
+          "id": "idleInhibitor",
+          "enabled": true
+        }
       ],
       "maximizeDetection": true,
       "name": "Main Bar",
