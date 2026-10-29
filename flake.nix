@@ -1,5 +1,5 @@
 {
-  description = "Multi-host flake (laptop + grace), built on top of the shared ./modules/ tree";
+  description = "Multi-host flake (laptop + grace + work-laptop), built on top of the shared ./modules/ tree";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -92,6 +92,17 @@
             ./hosts/desktop/configuration.nix
           ];
         };
+
+        work-laptop = lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit self inputs;
+          };
+          modules = [
+            ./hosts/work-laptop/configuration.nix
+            auto-cpufreq.nixosModules.default
+          ];
+        };
       };
 
       homeConfigurations = {
@@ -117,6 +128,17 @@
           modules = [
             nvf.homeManagerModules.default
             ./hosts/desktop/home.nix
+          ];
+          extraSpecialArgs = {
+            inherit self inputs;
+          };
+        };
+
+        "recluse@work-laptop" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            nvf.homeManagerModules.default
+            ./hosts/work-laptop/home.nix
           ];
           extraSpecialArgs = {
             inherit self inputs;

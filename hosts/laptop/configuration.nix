@@ -6,7 +6,7 @@
   imports = [
     ../../modules/nixos-system/minimal
     ../../modules/nixos-system/extra
-    ../../modules/nixos-system/hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
 
   networking.hostName = lib.mkForce "laptop";
