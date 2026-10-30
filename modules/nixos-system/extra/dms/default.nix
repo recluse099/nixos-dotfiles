@@ -4,7 +4,7 @@ let
   dms = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in
 {
-  programs.dms-shell = {
+  programs.dux-shell = {
     enable = false;
     package = dms;
     systemd.enable = false;

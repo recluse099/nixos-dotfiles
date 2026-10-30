@@ -4,7 +4,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # To enable Hibernation
-  boot.initrd.systemd.enable = true;
+  # (boot.initrd.systemd.enable removed: scripted initrd no longer exists,
+  # systemd-in-initrd is unconditional now)
   # resume_offset is the physical block offset of /swapfile's first extent
   # (physical_offset from `sudo filefrag -v /swapfile`, in 4096-byte blocks,
   # matching PAGE_SIZE on this system). It must be recalculated any time

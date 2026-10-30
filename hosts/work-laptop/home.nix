@@ -10,7 +10,7 @@
   home.username = "recluse";
   home.homeDirectory = "/home/recluse";
 
-  home.stateVersion = "25.05"; # Please read the comment before changing.
+  home.stateVersion = "26.05"; # Please read the comment before changing.
   news.display = "notify";
   imports = [
     inputs.zen-browser.homeModules.twilight

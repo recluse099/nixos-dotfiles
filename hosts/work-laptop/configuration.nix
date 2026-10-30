@@ -44,7 +44,7 @@ in
 
   # Enable the GNOME Desktop Environment.
   services.displayManager = {
-    dms-greeter = {
+    dux-greeter = {
       enable = false;
       compositor.name = "niri";
     };
@@ -57,5 +57,5 @@ in
     layout = "us";
     variant = "";
   };
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 }
