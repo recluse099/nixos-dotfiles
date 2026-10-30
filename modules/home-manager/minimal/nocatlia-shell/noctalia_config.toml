@@ -98,6 +98,10 @@ enabled = false
 [weather]
 enabled = false
 
+[widget.launcher]
+custom_image = "~/.config/noctalia/nix-snowflake.svg"
+custom_image_colorize = true
+
 [widget.media]
 hide_when_no_media = true
 
