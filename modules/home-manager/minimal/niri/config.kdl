@@ -73,7 +73,8 @@ input {
 
 output "eDP-1" {
   // off
-  mode "1920x1080"
+  // mode left unset so niri picks each panel's preferred/native mode
+  // (was hardcoded to 1920x1080, which letterboxed on this 1920x1200 panel)
   scale 1
   transform "normal"
   position x=1280 y=0 //doesn't matter cuz I only have one screen
