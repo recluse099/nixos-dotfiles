@@ -8,7 +8,6 @@ in
     enable = false;
     package = dms;
     systemd.enable = false;
-    enableSystemMonitoring = true;
     quickshell.package = quickshell-pkg;
   };
 }

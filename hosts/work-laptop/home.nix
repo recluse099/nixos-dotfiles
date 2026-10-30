@@ -40,7 +40,7 @@
     wlogout.enable = true;
     # Bigger default font-size than the shared minimal/ghostty module, for
     # this machine's higher-DPI panel.
-    ghostty.settings.font-size = lib.mkForce 20;
+    ghostty.settings.font-size = lib.mkForce 22;
   };
   services.network-manager-applet.enable = true;
   nixpkgs.config.allowUnfreePredicate = _: true;
